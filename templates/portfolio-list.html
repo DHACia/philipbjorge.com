@@ -1,0 +1,24 @@
+{# Blog list template #}
+
+{% extends "base.html" %}
+
+{% block content %}
+<div id="portfolio-items">
+{% for subpage in page.subpages|sort(attribute='datetime', reverse=True) %}
+	<article>
+		<h3 class="entry-title"><a href="{{ subpage.url }}">{{ subpage.title }}</a></h3>
+		created <time datetime="{{ subpage.date }}" pubdate></time>
+		  {% if subpage.title_img_src %}
+			<img src="{{ subpage.title_img_src|replace('{img_width}', '225') }}" class="title_img" title="{{ subpage.title }}" />
+		  {% endif %}
+		{% if subpage.snippet %}
+		  <p>
+			{{ subpage.snippet }}<br />
+			<a href='{{subpage.url}}'>View Project &raquo;</a>
+		  </p>
+		{% endif %}
+		<div style="height: 0px; clear: both"></div>
+	</article>
+{% endfor %}
+</div>
+{% endblock %}

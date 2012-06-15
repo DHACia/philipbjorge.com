@@ -1,0 +1,281 @@
+	 	 	
+<!DOCTYPE html >	
+<html dir="ltr" lang="en-US">	 	
+  <head>		 		 		 		
+    <meta charset="UTF-8" />		 		 		
+    <title>		 			  3D Fruchterman Reingold Algorithm? - Philip Bjorge 			 		
+    </title>		 		
+    <!-- Favicon --> 		 	 			
+    <link rel="shortcut icon" href="http://philipbjorge.nfshost.com/wp-content/uploads/favicon.ico" type="image/x-icon" />			 		 		 		
+    <!-- Main stylesheet (style.css) --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/style.css" type="text/css" />		 		
+    <!-- Skin --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/css/skin-2.css" type="text/css" />		 		
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>		
+    <style type="text/css">			h1, h2, h3, h4, h5, h6 { font-family:"PT Sans" !important; } 			#fancybox-loading.fancybox-ie div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_loading.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-close		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_close.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-over	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_over.png', sizingMethod='scale'); zoom: 1; } 			.fancybox-ie #fancybox-title-left	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_left.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-main	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_main.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-right	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_right.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-left-ico		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_nav_left.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-right-ico	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_nav_right.png', sizingMethod='scale'); } 			.fancybox-ie .fancy-bg { background: transparent !important; } 			.fancybox-ie #fancy-bg-n	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_n.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-ne	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_ne.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-e	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_e.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-se	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_se.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-s	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_s.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-sw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_sw.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-w	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_w.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-nw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_nw.png', sizingMethod='scale'); } 		
+    </style>		 		
+    <!-- Lightbox --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/css/jquery.fancybox-1.3.1.css" type="text/css" />		 		
+    <!-- Pingback --> 		
+    <link rel="pingback" href="../../../../xmlrpc.php" />		 		 		
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; Feed" href="../../../../feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; Comments Feed" href="../../../../comments/feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; 3D Fruchterman Reingold Algorithm? Comments Feed" href="http://www.philipbjorge.com/2011/11/11/3d-fruchterman-reingold/feed/" />
+    <link rel='stylesheet' id='codecolorer-css'  href='../../../../../cdn.philipbjorge.com/wp-content/plugins/codecolorer/codecolorer.css@ver=0.9.9.css' type='text/css' media='screen' />
+
+  </head>	 	 	
+  <body class="single single-post postid-181 single-format-standard">
+          <div class="blog-item">				 				
+            <!-- Title --> 				 					<h1>3D Fruchterman Reingold Algorithm?</h1>	 				 				 				
+            <!-- Info --> 				 		 		
+            <div class="entry-meta">			
+              <span class="post-date">
+                <span class="day">11
+                </span>
+                <span class="month">Nov
+                </span>
+              </span>  				
+            </div>		 		 				 				
+            <!-- Thumbnail --> 				
+            <div class="image">					
+              <img width="570" height="194" src="../../../../../cdn.philipbjorge.com/wp-content/uploads/snapshot-570x194.png" class="attachment-post-thumbnail wp-post-image" alt="Random Lobster Graph" title="Random Lobster Graph" />				
+            </div>				 				 					 					
+            <p>In preparation for SC11, I began experimenting with parallelism using something other than the built in paradigms in the Ada programming language. Unfortunately, it’s not so easy to pick a programming model – popular models include OpenMP, OpenMPI, OpenCL, CUDA, Intel Cilk, and pthreads (among others!). I might do a blog post in the future comparing all these parallelism APIs. Long story short, I decided to work with CUDA… mostly because it seemed exotic, a perfectly valid reason to learn something. Second, the algorithm I planned to implement seemed like it would be a good fit for the hardware. Unfortunately, this blog post doesn’t culminate with a finished, functioning algorithm. Instead, I will be focusing on the process I went through working on the project and what I learned through my failure. I think every programmer has a huge stack of unfinished projects and I feel that these are the projects that push one to learn the most.
+            </p>
+            <p>&nbsp;
+            </p><h3>What was I Implementing?</h3>
+            <p>I attempted to implement a 3D version of the Fruchterman-Reingold algorithm. The Fruchterman-Reingold algorithm is a force-based graph layout algorithm. Force-based meaning that it treats each vertex and edge as if it were a physical object whose position is influenced by forces around it. You can imagine that the algorithm treats each vertex as an electron and each edge as a spring – the electrons all repel against eachother, while the springs pull together. The pseudocode is as follows:
+            </p>
+<pre>
+<div class="codecolorer-container python mac-classic" style="overflow:auto;white-space:nowrap;width:578px;height:450px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />41<br />42<br />43<br /></div></td><td><div class="python codecolorer">area <span class="sy0">=</span> W * L<span class="sy0">;</span> &nbsp; <span class="co1"># W and L are the width and length of the frame</span><br />
+G <span class="sy0">=</span> <span class="br0">&#40;</span>V<span class="sy0">,</span>E<span class="br0">&#41;</span><span class="sy0">;</span>&nbsp; &nbsp; <span class="co1"># The vertices are assigned random initial positionsg</span><br />
+k <span class="sy0">=</span> sqrt<span class="br0">&#40;</span>area/count<span class="br0">&#40;</span>vertices<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+<br />
+<span class="kw1">def</span> fa<span class="br0">&#40;</span>x<span class="br0">&#41;</span>:<br />
+&nbsp; <span class="kw1">return</span> <span class="br0">&#40;</span>x*x<span class="br0">&#41;</span>/k<span class="sy0">;</span><br />
+<br />
+<span class="kw1">def</span> fr<span class="br0">&#40;</span>x<span class="br0">&#41;</span>:<br />
+&nbsp; begin <span class="br0">&#40;</span>k*k<span class="br0">&#41;</span>/x<span class="sy0">;</span><br />
+<br />
+<span class="co1"># Slightly arbitrary, modern versions use an epsilon</span><br />
+<span class="co1"># value for when total movement falls under a certain range</span><br />
+<span class="kw1">for</span> i <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">44</span><span class="br0">&#41;</span>:<br />
+<br />
+&nbsp; <span class="co1"># Calculate the repulsive forces on vertexes/electrons</span><br />
+&nbsp; <span class="kw1">for</span> v <span class="kw1">in</span> G.<span class="me1">vertexes</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:<br />
+&nbsp; &nbsp; <span class="co1"># Each vertex has two vectors: position and displacement</span><br />
+&nbsp; &nbsp; v.<span class="me1">displacement</span> <span class="sy0">=</span> <span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">for</span> u <span class="kw1">in</span> G.<span class="me1">vertexes</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:<br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> u <span class="sy0">!=</span> v:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="co1"># diff is the difference vector</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; diff <span class="sy0">=</span> v.<span class="me1">position</span> - u.<span class="me1">position</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; v.<span class="me1">displacement</span> <span class="sy0">=</span> v.<span class="me1">displacement</span> + <span class="br0">&#40;</span>diff/magnitude<span class="br0">&#40;</span>diff<span class="br0">&#41;</span><span class="br0">&#41;</span> * fr<span class="br0">&#40;</span>magnitude<span class="br0">&#40;</span>diff<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+<br />
+&nbsp; <span class="co1"># Calculate the attractive forces on edges/springs</span><br />
+&nbsp; <span class="kw1">for</span> e <span class="kw1">in</span> G.<span class="me1">edges</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:<br />
+&nbsp; &nbsp; <span class="co1"># Each edge is a pair of vertices (u and v)</span><br />
+&nbsp; &nbsp; diff <span class="sy0">=</span> e.<span class="me1">v</span>.<span class="me1">position</span> - e.<span class="me1">u</span>.<span class="me1">position</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; e.<span class="me1">v</span>.<span class="me1">displacement</span> <span class="sy0">=</span> e.<span class="me1">v</span>.<span class="me1">displacement</span> - <span class="br0">&#40;</span>diff/magnitude<span class="br0">&#40;</span>diff<span class="br0">&#41;</span><span class="br0">&#41;</span> * fa<span class="br0">&#40;</span>magnitude<span class="br0">&#40;</span>diff<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; e.<span class="me1">u</span>.<span class="me1">displacement</span> <span class="sy0">=</span> e.<span class="me1">u</span>.<span class="me1">displacement</span> + <span class="br0">&#40;</span>diff/magnitude<span class="br0">&#40;</span>diff<span class="br0">&#41;</span><span class="br0">&#41;</span> * fa<span class="br0">&#40;</span>magnitude<span class="br0">&#40;</span>diff<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+<br />
+&nbsp; <span class="co1"># Limit the max displacement to a temperature t and keep them inside the frame</span><br />
+&nbsp; <span class="co1"># The temperature t allows for large movements at the beginning of the loop</span><br />
+&nbsp; <span class="co1"># and smaller, more refined movements near the end. AKA Simulated Annealing</span><br />
+&nbsp; <span class="kw1">for</span> v <span class="kw1">in</span> G.<span class="me1">vertexes</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:<br />
+&nbsp; &nbsp; v.<span class="me1">position</span> <span class="sy0">=</span> v.<span class="me1">position</span> + <span class="br0">&#40;</span>v.<span class="me1">displacement</span>/magnitude<span class="br0">&#40;</span>v.<span class="me1">displacement</span><span class="br0">&#41;</span><span class="br0">&#41;</span> * <span class="kw2">min</span><span class="br0">&#40;</span>v.<span class="me1">displacement</span><span class="sy0">,</span> t<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; v.<span class="me1">position</span>.<span class="me1">x</span> <span class="sy0">=</span> <span class="kw2">min</span><span class="br0">&#40;</span>W/<span class="nu0">2</span><span class="sy0">,</span> <span class="kw2">max</span><span class="br0">&#40;</span>-W/<span class="nu0">2</span><span class="sy0">,</span> v.<span class="me1">position</span>.<span class="me1">x</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; v.<span class="me1">position</span>.<span class="me1">y</span> <span class="sy0">=</span> <span class="kw2">min</span><span class="br0">&#40;</span>L/<span class="nu0">2</span><span class="sy0">,</span> <span class="kw2">max</span><span class="br0">&#40;</span>-L/<span class="nu0">2</span><span class="sy0">,</span> v.<span class="me1">position</span>.<span class="me1">y</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+<br />
+&nbsp; <span class="co1"># Reduce the temperature as the layout approaches a better configuration</span><br />
+&nbsp; <span class="co1"># .9^i gives us a max movement of ~1% in the last iteration</span><br />
+&nbsp; <span class="co1"># Better cooling methods exist</span><br />
+&nbsp; t <span class="sy0">=</span> <span class="kw2">pow</span><span class="br0">&#40;</span><span class="nu0">.9</span><span class="sy0">,</span> i<span class="br0">&#41;</span><span class="sy0">;</span></div></td></tr></tbody></table></div>
+</pre>
+            <p>As you can see, it’s a reasonably straight-forward algorithm and the outer-loop on all the vertices is readily parallelizable. Not to mention, I’ve implemented the 2D version before (with a lot of trouble) and I’d read a number of journal articles on similar graph layout methods. Finally, I’d worked through a number of chapters in 
+              <a href="http://developer.nvidia.com/cuda-example-introduction-general-purpose-gpu-programming" target="_blank">CUDA by Example</a> and was confident that I understood CUDA well enough to write some naïve code. With all these things in mind, I felt quite confident about implementing the parallel portion of the algorithm. My main concerns were actually in the visualization portion.
+            </p>
+            <p>&nbsp;
+            </p><h3>How’d it go?</h3>
+            <p>&nbsp;
+            </p><h4>Drawing the Graph</h4>
+            <p>The first challenge I needed to solve was drawing the graph. Without a navigable 3D representation of the graph, I would have no way to visually debug or determine the correctness of my algorithm. I played around a little bit with 
+              <a href="http://www.opengl.org/resources/libraries/glut/" target="_blank">GLUT</a> and 
+              <a href="http://www.nigels.com/glt/gltzpr/" target="_blank">GLT ZPR</a> before I determined that learning OpenGL would be out of the scope of this project. So, I began to look at various Math Visualization pckages and remembered the demos 
+              <a href="http://www.enthought.com/" target="_blank">Enthought</a> gave of Mayavi at the 
+              <a href="http://www.seg.org/events/annual-meeting/sanantonio2011/am2011overview" target="_blank">SEG 2011 conference</a>. After downloading the student distribution of their Python package and following a few tutorials, I had 3D graphs displaying! Testing with graphs of 10,000 vertices worked, but ~5000 seemed to be the sweet spot that made everything smooth. I&#8217;m sure that the drawing code could be optimized for larger graphs.
+            </p>
+            <p>
+              <iframe src="http://www.youtube.com/embed/FjY3EPR369o" frameborder="0" width="560" height="315">
+              </iframe>
+            </p>
+<pre>
+<div class="codecolorer-container python mac-classic" style="overflow:auto;white-space:nowrap;width:578px;height:450px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br /></div></td><td><div class="python codecolorer"><span class="kw1">import</span> networkx <span class="kw1">as</span> nx<br />
+<span class="kw1">import</span> numpy <span class="kw1">as</span> np<br />
+<span class="kw1">import</span> numpy.<span class="me1">ma</span> <span class="kw1">as</span> ma<br />
+<span class="kw1">from</span> enthought.<span class="me1">mayavi</span> <span class="kw1">import</span> mlab<br />
+<br />
+<span class="co1"># Generate graph to visualize</span><br />
+<span class="co1">#H=nx.random_lobster(100,0.9,0.9)</span><br />
+H<span class="sy0">=</span>nx.<span class="me1">balanced_tree</span><span class="br0">&#40;</span><span class="nu0">3</span><span class="sy0">,</span> <span class="nu0">5</span><span class="br0">&#41;</span><br />
+G<span class="sy0">=</span>nx.<span class="me1">convert_node_labels_to_integers</span><span class="br0">&#40;</span>H<span class="br0">&#41;</span><br />
+<br />
+<span class="co1"># 3d spring layout (SLOW)</span><br />
+pos<span class="sy0">=</span>nx.<span class="me1">spring_layout</span><span class="br0">&#40;</span>G<span class="sy0">,</span>dim<span class="sy0">=</span><span class="nu0">3</span><span class="sy0">,</span>scale<span class="sy0">=</span><span class="nu0">100</span><span class="br0">&#41;</span><br />
+<br />
+<span class="co1"># numpy array of x,y,z positions in sorted node order</span><br />
+xyz<span class="sy0">=</span>np.<span class="kw3">array</span><span class="br0">&#40;</span><span class="br0">&#91;</span>pos<span class="br0">&#91;</span>v<span class="br0">&#93;</span> <span class="kw1">for</span> v <span class="kw1">in</span> <span class="kw2">sorted</span><span class="br0">&#40;</span>G<span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span><br />
+<br />
+<span class="co1"># scalar colors</span><br />
+scalars<span class="sy0">=</span>np.<span class="kw3">array</span><span class="br0">&#40;</span>G.<span class="me1">nodes</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>+<span class="nu0">5</span><br />
+<br />
+mlab.<span class="me1">figure</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span> bgcolor<span class="sy0">=</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+mlab.<span class="me1">clf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><br />
+<br />
+pts <span class="sy0">=</span> mlab.<span class="me1">points3d</span><span class="br0">&#40;</span>xyz<span class="br0">&#91;</span>:<span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">,</span> xyz<span class="br0">&#91;</span>:<span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span> xyz<span class="br0">&#91;</span>:<span class="sy0">,</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy0">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scalars<span class="sy0">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scale_factor<span class="sy0">=</span><span class="nu0">1</span><span class="sy0">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scale_mode<span class="sy0">=</span><span class="st0">'none'</span><span class="sy0">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; colormap<span class="sy0">=</span><span class="st0">'Blues'</span><span class="sy0">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; resolution<span class="sy0">=</span><span class="nu0">20</span><span class="br0">&#41;</span><br />
+<br />
+pts.<span class="me1">mlab_source</span>.<span class="me1">dataset</span>.<span class="me1">lines</span> <span class="sy0">=</span> np.<span class="kw3">array</span><span class="br0">&#40;</span>G.<span class="me1">edges</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+tube <span class="sy0">=</span> mlab.<span class="me1">pipeline</span>.<span class="me1">tube</span><span class="br0">&#40;</span>pts<span class="sy0">,</span> tube_radius<span class="sy0">=</span><span class="nu0">0.1</span><span class="br0">&#41;</span><br />
+mlab.<span class="me1">pipeline</span>.<span class="me1">surface</span><span class="br0">&#40;</span>tube<span class="sy0">,</span> color<span class="sy0">=</span><span class="br0">&#40;</span><span class="nu0">0.8</span><span class="sy0">,</span> <span class="nu0">0.8</span><span class="sy0">,</span> <span class="nu0">0.8</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+<br />
+mlab.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1"># interactive window</span></div></td></tr></tbody></table></div>
+</pre><h4>Preparation for CUDA</h4>
+            <p>Since I was already doing the display in Python, I looked for CUDA python solutions and found the excellent 
+              <a href="http://mathema.tician.de/software/pycuda" target="_blank">pyCuda library</a>. PyCUDA allows a programmer to embed C code inside their python scripts and use numpy and its drivers for creating large arrays and copying to/from the device. It’s an incredibly elegant solution with almost no performance hit on the CUDA side of things. So, I devised the following way to store the necessary graph information in a few arrays. NOTE: Using a structure of arrays instead of an array of structures would be more optimal.
+            </p>
+            <p>
+              <img src="../../../../images/cuda_graph_arrays.png" alt="" />
+            </p>
+            <p>All of this worked beautifully and everything was being stored in my array structures. I copied these to the device and now all that was remaining was the actual CUDA algorithm.
+            </p>
+<pre>
+<div class="codecolorer-container python mac-classic" style="overflow:auto;white-space:nowrap;width:578px;height:450px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />41<br />42<br />43<br />44<br />45<br />46<br />47<br />48<br />49<br />50<br /></div></td><td><div class="python codecolorer">H<span class="sy0">=</span>nx.<span class="me1">balanced_tree</span><span class="br0">&#40;</span><span class="nu0">3</span><span class="sy0">,</span> <span class="nu0">5</span><span class="br0">&#41;</span><br />
+G<span class="sy0">=</span>nx.<span class="me1">convert_node_labels_to_integers</span><span class="br0">&#40;</span>H<span class="br0">&#41;</span><br />
+<span class="kw1">print</span> <span class="st0">&quot;generated graph&quot;</span><br />
+<br />
+DEPTH <span class="sy0">=</span> <span class="nu0">10</span><span class="sy0">;</span><br />
+<br />
+<span class="co1"># Generated GPU XYZ in the format [ [1, 2, 3, w], [2, 2, 2, w] ]</span><br />
+<span class="co1"># Values are random between 0 and DEPTH</span><br />
+gpu_xyz <span class="sy0">=</span> np.<span class="kw3">random</span>.<span class="me1">randn</span><span class="br0">&#40;</span>G.<span class="me1">number_of_nodes</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span><span class="nu0">4</span><span class="br0">&#41;</span> * DEPTH<br />
+gpu_xyz <span class="sy0">=</span> gpu_xyz.<span class="me1">astype</span><span class="br0">&#40;</span>np.<span class="me1">float32</span><span class="br0">&#41;</span><br />
+<br />
+<span class="co1"># Generate gpu_vtoe - each index represents a vertex. each index</span><br />
+<span class="co1"># contains an int mapping it to the list of edges</span><br />
+<span class="co1"># If it contans -1, that means their are no edges</span><br />
+<span class="co1"># and gpu_emap - contains integers pointing to vertexes</span><br />
+gpu_vtoe <span class="sy0">=</span> np.<span class="me1">ones</span><span class="br0">&#40;</span>shape<span class="sy0">=</span>G.<span class="me1">number_of_nodes</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span> dtype<span class="sy0">=</span>np.<span class="me1">int32</span><span class="br0">&#41;</span><br />
+gpu_vtoe <span class="sy0">=</span> gpu_vtoe*-<span class="nu0">1</span><span class="sy0">;</span><br />
+<br />
+gpu_emap <span class="sy0">=</span> np.<span class="me1">zeros</span><span class="br0">&#40;</span>shape<span class="sy0">=</span>G.<span class="me1">number_of_edges</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span> dtype<span class="sy0">=</span>np.<span class="me1">int32</span><span class="br0">&#41;</span><br />
+<br />
+cur_v <span class="sy0">=</span> -<span class="nu0">1</span><br />
+index <span class="sy0">=</span> <span class="nu0">0</span><br />
+<span class="kw1">for</span> pair <span class="kw1">in</span> G.<span class="me1">edges</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:<br />
+&nbsp; &nbsp;<span class="kw1">if</span> pair<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy0">!=</span> cur_v:<br />
+&nbsp; &nbsp; &nbsp; cur_v <span class="sy0">=</span> pair<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><br />
+&nbsp; &nbsp; &nbsp; gpu_vtoe<span class="br0">&#91;</span>cur_v<span class="br0">&#93;</span> <span class="sy0">=</span> index<br />
+<br />
+&nbsp; &nbsp;gpu_emap<span class="br0">&#91;</span>index<span class="br0">&#93;</span> <span class="sy0">=</span> pair<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><br />
+&nbsp; &nbsp;index <span class="sy0">=</span> index+<span class="nu0">1</span><br />
+<br />
+<span class="kw1">print</span> <span class="st0">&quot;Generated GPU data types&quot;</span><br />
+<br />
+<span class="co1"># Copy over data</span><br />
+a_gpu_xyz <span class="sy0">=</span> cuda.<span class="me1">mem_alloc</span><span class="br0">&#40;</span>gpu_xyz.<span class="me1">nbytes</span><span class="br0">&#41;</span><br />
+cuda.<span class="me1">memcpy_htod</span><span class="br0">&#40;</span>a_gpu_xyz<span class="sy0">,</span> gpu_xyz<span class="br0">&#41;</span><br />
+<br />
+a_gpu_vtoe <span class="sy0">=</span> cuda.<span class="me1">mem_alloc</span><span class="br0">&#40;</span>gpu_vtoe.<span class="me1">nbytes</span><span class="br0">&#41;</span><br />
+cuda.<span class="me1">memcpy_htod</span><span class="br0">&#40;</span>a_gpu_vtoe<span class="sy0">,</span> gpu_vtoe<span class="br0">&#41;</span><br />
+<br />
+a_gpu_emap <span class="sy0">=</span> cuda.<span class="me1">mem_alloc</span><span class="br0">&#40;</span>gpu_emap.<span class="me1">nbytes</span><span class="br0">&#41;</span><br />
+cuda.<span class="me1">memcpy_htod</span><span class="br0">&#40;</span>a_gpu_emap<span class="sy0">,</span> gpu_emap<span class="br0">&#41;</span><br />
+<br />
+gpu_cool <span class="sy0">=</span> np.<span class="me1">ones</span><span class="br0">&#40;</span>shape<span class="sy0">=</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">,</span> dtype<span class="sy0">=</span>np.<span class="me1">float32</span><span class="br0">&#41;</span><br />
+a_gpu_cool <span class="sy0">=</span> cuda.<span class="me1">mem_alloc</span><span class="br0">&#40;</span>gpu_cool.<span class="me1">nbytes</span><span class="br0">&#41;</span><br />
+cuda.<span class="me1">memcpy_htod</span><span class="br0">&#40;</span>a_gpu_cool<span class="sy0">,</span> gpu_cool<span class="br0">&#41;</span><br />
+<br />
+gpu_k <span class="sy0">=</span> np.<span class="me1">ones</span><span class="br0">&#40;</span>shape<span class="sy0">=</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">,</span> dtype<span class="sy0">=</span>np.<span class="me1">float32</span><span class="br0">&#41;</span><br />
+gpu_k<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="nu0">0.01</span>*<span class="kw2">pow</span><span class="br0">&#40;</span><span class="br0">&#40;</span>DEPTH*DEPTH*DEPTH/G.<span class="me1">number_of_nodes</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span><span class="nu0">1.0</span>/<span class="nu0">3</span><span class="br0">&#41;</span><br />
+a_gpu_k <span class="sy0">=</span> cuda.<span class="me1">mem_alloc</span><span class="br0">&#40;</span>gpu_k.<span class="me1">nbytes</span><span class="br0">&#41;</span><br />
+cuda.<span class="me1">memcpy_htod</span><span class="br0">&#40;</span>a_gpu_k<span class="sy0">,</span> gpu_k<span class="br0">&#41;</span></div></td></tr></tbody></table></div>
+</pre><h4>The CUDA Algorithm</h4>
+            <p>This is where the successes end and where I learned some very important lessons. I implemented the algorithm from the paper as straight-forward as possible. I bypassed the pitfall of premature optimization (which is hard to dodge when the goal is speed) by ignoring optimizations like using shared memory, Float3 vs Float4, or various block sizes and thread counts. After fixing a few syntax and pointer errors, the code was compiling. That’s when I started getting 
+              <a href="http://en.wikipedia.org/wiki/NaN" target="_blank">NaN’s</a>. Some computation in the algorithm was giving me xyz values that couldn’t be represented as floats.
+            </p>
+<pre>
+<div class="codecolorer-container c mac-classic" style="overflow:auto;white-space:nowrap;width:578px;height:450px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />41<br />42<br />43<br /></div></td><td><div class="c codecolorer">__global__ <span class="kw4">void</span> fr_layout<span class="br0">&#40;</span>float4 <span class="sy0">*</span>xyz<span class="sy0">,</span> <span class="kw4">int</span> <span class="sy0">*</span>vtoe<span class="sy0">,</span> <span class="kw4">int</span> <span class="sy0">*</span>emap<span class="sy0">,</span> <span class="kw4">float</span> <span class="sy0">*</span>cool<span class="sy0">,</span> <span class="kw4">float</span> <span class="sy0">*</span>k<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp;<span class="kw4">unsigned</span> <span class="kw4">int</span> selfIdx <span class="sy0">=</span> <span class="br0">&#40;</span>blockIdx.<span class="me1">x</span><span class="sy0">*</span>blockDim.<span class="me1">x</span><span class="br0">&#41;</span><span class="sy0">+</span>threadIdx.<span class="me1">x</span><span class="sy0">;</span><br />
+&nbsp; &nbsp;float4 selfDisplacement <span class="sy0">=</span> make_float4<span class="br0">&#40;</span><span class="nu17">0.0f</span><span class="sy0">,</span><span class="nu17">0.0f</span><span class="sy0">,</span><span class="nu17">0.0f</span><span class="sy0">,</span><span class="nu17">0.0f</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp;float4 selfPosition <span class="sy0">=</span> xyz<span class="br0">&#91;</span>selfIdx<span class="br0">&#93;</span><span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp;<span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp;<span class="co1">// Loop through Vertices, calculating force for self</span><br />
+&nbsp; &nbsp;<span class="kw1">for</span><span class="br0">&#40;</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&amp;</span>lt<span class="sy0">;</span> vertex_count<span class="sy0">;</span> i <span class="sy0">=</span> i<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span><span class="br0">&#40;</span>i <span class="sy0">!=</span> selfIdx<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;float4 otherPosition <span class="sy0">=</span> xyz<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;float4 delta <span class="sy0">=</span> selfPosition <span class="sy0">-</span> otherPosition<span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;selfDisplacement <span class="sy0">=</span> selfDisplacement <span class="sy0">+</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>delta<span class="sy0">/</span>magnitude<span class="br0">&#40;</span>delta<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy0">*</span> f_r<span class="br0">&#40;</span>magnitude<span class="br0">&#40;</span>delta<span class="br0">&#41;</span><span class="sy0">,</span> <span class="sy0">*</span>k<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp;<span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp;<span class="co1">// For edges connected to this vertex</span><br />
+&nbsp; &nbsp;<span class="co1">// I'm only modifying this vertex's position</span><br />
+&nbsp; &nbsp;<span class="kw4">int</span> start <span class="sy0">=</span> vtoe<span class="br0">&#91;</span>selfIdx<span class="br0">&#93;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp;<span class="kw4">int</span> end <span class="sy0">=</span> selfIdx<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp;<span class="kw1">if</span><span class="br0">&#40;</span>start <span class="sy0">!=</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw4">int</span> done <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="co1">// Find next index that is not -1</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">while</span><span class="br0">&#40;</span>done <span class="sy0">==</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">if</span><span class="br0">&#40;</span>vtoe<span class="br0">&#91;</span>end<span class="br0">&#93;</span> <span class="sy0">!=</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; done <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; end <span class="sy0">=</span> end <span class="sy0">+</span> <span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; end <span class="sy0">=</span> vtoe<span class="br0">&#91;</span>end<span class="br0">&#93;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">for</span><span class="br0">&#40;</span>i <span class="sy0">=</span> start<span class="sy0">;</span> i <span class="sy0">&amp;</span>lt<span class="sy0">;</span> end<span class="sy0">;</span> i <span class="sy0">=</span> i <span class="sy0">+</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw4">int</span> otherVertexIdx <span class="sy0">=</span> emap<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; float4 otherPosition <span class="sy0">=</span> xyz<span class="br0">&#91;</span>otherVertexIdx<span class="br0">&#93;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; float4 delta <span class="sy0">=</span> selfPosition <span class="sy0">-</span> otherPosition<span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; selfDisplacement <span class="sy0">=</span> selfDisplacement <span class="sy0">+</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>delta<span class="sy0">/</span>magnitude<span class="br0">&#40;</span>delta<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy0">*</span> f_a<span class="br0">&#40;</span>magnitude<span class="br0">&#40;</span>delta<span class="br0">&#41;</span><span class="sy0">,</span> <span class="sy0">*</span>k<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp;<span class="br0">&#125;</span><br />
+&nbsp; &nbsp;xyz<span class="br0">&#91;</span>selfIdx<span class="br0">&#93;</span>.<span class="me1">x</span> <span class="sy0">=</span> xyz<span class="br0">&#91;</span>selfIdx<span class="br0">&#93;</span>.<span class="me1">x</span> <span class="sy0">+</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>selfDisplacement<span class="sy0">/</span>magnitude<span class="br0">&#40;</span>selfDisplacement<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy0">*</span> min<span class="br0">&#40;</span>selfDisplacement.<span class="me1">x</span><span class="sy0">,</span> <span class="sy0">*</span>cool<span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">x</span><span class="sy0">;</span><br />
+&nbsp; &nbsp;xyz<span class="br0">&#91;</span>selfIdx<span class="br0">&#93;</span>.<span class="me1">y</span> <span class="sy0">=</span> xyz<span class="br0">&#91;</span>selfIdx<span class="br0">&#93;</span>.<span class="me1">y</span> <span class="sy0">+</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>selfDisplacement<span class="sy0">/</span>magnitude<span class="br0">&#40;</span>selfDisplacement<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy0">*</span> min<span class="br0">&#40;</span>selfDisplacement.<span class="me1">y</span><span class="sy0">,</span> <span class="sy0">*</span>cool<span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">y</span><span class="sy0">;</span><br />
+&nbsp; &nbsp;xyz<span class="br0">&#91;</span>selfIdx<span class="br0">&#93;</span>.<span class="me1">z</span> <span class="sy0">=</span> xyz<span class="br0">&#91;</span>selfIdx<span class="br0">&#93;</span>.<span class="me1">z</span> <span class="sy0">+</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>selfDisplacement<span class="sy0">/</span>magnitude<span class="br0">&#40;</span>selfDisplacement<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy0">*</span> min<span class="br0">&#40;</span>selfDisplacement.<span class="me1">z</span><span class="sy0">,</span> <span class="sy0">*</span>cool<span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">z</span><span class="sy0">;</span><br />
+<span class="br0">&#125;</span></div></td></tr></tbody></table></div>
+</pre>
+            <p>I narrowed it down to the Edge forces section, but after many hours of debugging I could not determine why these calculations were incorrect.
+            </p>
+            <p>&nbsp;
+            </p><h3>What did I learn the hard way?</h3>
+            <p>First, academic pseudo-code isn&#8217;t terribly reliable. Even in the original paper by Fruchterman and Reingold their were typos in the pseudo-code. In most cases, Computer Science research and benchmarks should be trivial to reproduce, but I think in practice it&#8217;s not.
+            </p>
+            <p>Second, write an iterative solution to test for correctness before parallelizing it. If I had gotten my 3D algorithm working sequentially, I could have avoided the NaN bug on the edge traversals.
+            </p>
+            <p>Third, I updated my CUDA drivers from NVIDIA midway through the project which intermittently broke the nvcc compiler. I spent a few hours determining what the cause of these errors were (they didn&#8217;t show up in Google).
+            </p>
+            <p>&nbsp;
+            </p><h3>What did I learn &#8220;the good way&#8221;?</h3>
+            <p>I got a great overview of CUDA and some of its strengths. CUDA isn&#8217;t so different from developing with other parallel tools &#8211; it just excels at number crunching.
+            </p>
+            <p>C is not the best tool for demos and prototyping. Using python and available software packages, I saved dozens of hours when prototyping. I suppose its just a case of using the best tool for the job.
+            </p><h4>Further Reading:</h4>
+            <p>
+              <a title="Original Fruchterman Reingold Paper" href="https://docs.google.com/viewer?a=v&amp;q=cache:D24Pdwbz5bcJ:citeseerx.ist.psu.edu/viewdoc/download%3Fdoi%3D10.1.1.13.8444%26rep%3Drep1%26type%3Dpdf+fruchterman+reingold&amp;hl=en&amp;gl=us&amp;pid=bl&amp;srcid=ADGEESh-kaQXLQsHHkLy_EfZfo5rh1UnnqGfEN3QqEiAF6Y4D24p9UexsLHb9B7OKBVO8HhvBD1C--0ALoJRaTQ4ElqAXRGR3uHdxH_1zIXvDpNdx9W9thsfj5UtDGipE82G1uBuYRL_&amp;sig=AHIEtbQNByRNTwXoYRlZk0GEDVDw3009Xw" target="_blank">Original Fruchterman Reingold Paper</a><br />
+              <a title="A huge collection of papers on a variety of graph layout topics" href="https://docs.google.com/viewer?a=v&amp;q=cache:_W0757tnsPgJ:citeseerx.ist.psu.edu/viewdoc/download%3Fdoi%3D10.1.1.103.1345%26rep%3Drep1%26type%3Dpdf+graph+drawing+algorithm&amp;hl=en&amp;gl=us&amp;pid=bl&amp;srcid=ADGEESiIYsXO9AuLQ7TwDt_Ti9vNBMlO_LlreAuvEzidsSyOhFHzkaJjSPP35UM4cK24OTF4HPrSaKZsL1r5WfgQODGrAmvh3eZmSZUQuUnVdFYLpqHYEFYDnW6hBtMNZqK5NBqx9_uB&amp;sig=AHIEtbQdHphHKiBwTa6BgLbxrGiVbY69jQ" target="_blank">A huge collection of papers on a variety of graph layout topics</a><br />
+              <a title="Mayavi by Enthought" href="http://code.enthought.com/projects/mayavi/" target="_blank">Mayavi by Enthought</a>
+            </p>					 				 				 				
+          </div>  
+  </body>
+</html>	 
+<!-- Dynamic page generated in 0.508 seconds. --> 
+<!-- Cached page generated by WP-Super-Cache on 2012-06-02 09:06:00 --> 
+<!-- super cache -->

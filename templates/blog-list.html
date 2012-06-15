@@ -1,0 +1,37 @@
+{# Blog list template #}
+
+{% extends "base.html" %}
+
+{% block content %}
+<div id="blog-items">
+{% for subpage in page.pagination.page_items %}
+	<article>
+		<h2 class="entry-title"><a href="{{ subpage.url }}">{{ subpage.title }}</a></h2>
+		posted <time datetime="{{ subpage.datetime }}" pubdate>{% if subpage.datetime %}{{ subpage.datetime.strftime("%A %B %d, %Y")}}{% endif %}</time><br />
+		  {% if subpage.title_img_src %}
+			<img src="{{ subpage.title_img_src|replace('{img_width}', '225') }}" class="title_img" title="{{ subpage.title }}" />
+		  {% endif %}
+		{% if subpage.snippet %}
+		  <p>
+			{{ subpage.snippet|truncate(length=250) }}
+			<a href='{{subpage.url}}'>more &raquo;</a>
+		  </p>
+		{% endif %}
+		<div style="height: 0px; clear: both"></div>
+	</article>
+{% endfor %}
+</div>
+
+{% if page.pagination %}
+  <div class="pagination">
+	{% if page.pagination.next_page %}
+		<a class="next" href="{{ page.pagination.next_page.url }}">Older &rarr;</a>
+	{% endif %}
+    <a href="/blog/archives">Blog Archives</a>
+	{% if page.pagination.prev_page %}
+        <a class="prev" href="{{ page.pagination.prev_page.url }}">&larr; Newer</a>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% endblock %}

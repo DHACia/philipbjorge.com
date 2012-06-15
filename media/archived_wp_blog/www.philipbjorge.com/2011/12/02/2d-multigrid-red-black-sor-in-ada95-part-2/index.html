@@ -1,0 +1,130 @@
+	 	 	
+<!DOCTYPE html >	
+<html dir="ltr" lang="en-US">	 	
+  <head>		 		 		 		
+    <meta charset="UTF-8" />		 		 		
+    <title>		 			  2D Multigrid &amp; Red-Black SOR in Ada95&#8230; Part 2 - Philip Bjorge 			 		
+    </title>		 		
+    <!-- Favicon --> 		 	 			
+    <link rel="shortcut icon" href="http://philipbjorge.nfshost.com/wp-content/uploads/favicon.ico" type="image/x-icon" />			 		 		 		
+    <!-- Main stylesheet (style.css) --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/style.css" type="text/css" />		 		
+    <!-- Skin --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/css/skin-2.css" type="text/css" />		 		
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>		
+    <style type="text/css">			h1, h2, h3, h4, h5, h6 { font-family:"PT Sans" !important; } 			#fancybox-loading.fancybox-ie div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_loading.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-close		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_close.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-over	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_over.png', sizingMethod='scale'); zoom: 1; } 			.fancybox-ie #fancybox-title-left	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_left.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-main	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_main.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-right	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_right.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-left-ico		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_nav_left.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-right-ico	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_nav_right.png', sizingMethod='scale'); } 			.fancybox-ie .fancy-bg { background: transparent !important; } 			.fancybox-ie #fancy-bg-n	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_n.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-ne	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_ne.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-e	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_e.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-se	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_se.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-s	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_s.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-sw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_sw.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-w	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_w.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-nw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_nw.png', sizingMethod='scale'); } 		
+    </style>		 		
+    <!-- Lightbox --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/css/jquery.fancybox-1.3.1.css" type="text/css" />		 		
+    <!-- Pingback --> 		
+    <link rel="pingback" href="../../../../xmlrpc.php" />		 		 		
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; Feed" href="../../../../feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; Comments Feed" href="../../../../comments/feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; 2D Multigrid &amp; Red-Black SOR in Ada95&#8230; Part 2 Comments Feed" href="http://www.philipbjorge.com/2011/12/02/2d-multigrid-red-black-sor-in-ada95-part-2/feed/" />
+    <link rel='stylesheet' id='codecolorer-css'  href='../../../../../cdn.philipbjorge.com/wp-content/plugins/codecolorer/codecolorer.css@ver=0.9.9.css' type='text/css' media='screen' />
+
+  </head>	 	 	
+  <body class="single single-post postid-242 single-format-standard">
+          <div class="blog-item">				 				
+            <!-- Title --> 				 					<h1>2D Multigrid &#038; Red-Black SOR in Ada95&#8230; Part 2</h1>	 				 				 				
+            <!-- Info --> 				 		 		
+            <div class="entry-meta">			
+              <span class="post-date">
+                <span class="day">2
+                </span>
+                <span class="month">Dec
+                </span>
+              </span>  				
+            </div>		 		 				 				
+            <!-- Thumbnail --> 				
+            <div class="image">					
+              <img width="570" height="194" src="../../../../../cdn.philipbjorge.com/wp-content/uploads/multigridR-570x194.jpg" class="attachment-post-thumbnail wp-post-image" alt="multigridR" title="multigridR" />				
+            </div>				 				 					 					
+            <p align="right">Before we begin the next part in this series, let’s review the stencil used for solving the heat equation.
+            </p>
+            <p>
+              <img src="../../../../../cdn.philipbjorge.com/wp-content/uploads/news_thumb.png" alt="" />
+            </p>
+            <p>A single iteration over the grid involves applying this stencil (taking the NEWS (North/East/West/South average) for every index in the inner grid. Let’s see how this looks sequentially in Python. This is known as Jacobi iteration and is the most basic type of solver for elliptic PDEs.
+            </p>
+<pre>
+<div class="codecolorer-container python mac-classic" style="overflow:auto;white-space:nowrap;width:578px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br /></div></td><td><div class="python codecolorer"><span class="co1"># Assumes a numpy type of grid for indexing and copying to work</span><br />
+<span class="kw1">while</span> <span class="kw2">True</span>:<br />
+<br />
+&nbsp; <span class="co1"># Computes new values for the inner grid</span><br />
+&nbsp; <span class="kw1">for</span> i <span class="kw1">in</span> rows:<br />
+&nbsp; &nbsp; <span class="kw1">for</span> j <span class="kw1">in</span> cols:<br />
+&nbsp; &nbsp; &nbsp; <span class="kw3">new</span><span class="br0">&#91;</span>i<span class="sy0">,</span>j<span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#40;</span>grid<span class="br0">&#91;</span>i-<span class="nu0">1</span><span class="sy0">,</span>j<span class="br0">&#93;</span>+grid<span class="br0">&#91;</span>i+<span class="nu0">1</span><span class="sy0">,</span>j<span class="br0">&#93;</span>+grid<span class="br0">&#91;</span>i<span class="sy0">,</span>j-<span class="nu0">1</span><span class="br0">&#93;</span>+grid<span class="br0">&#91;</span>i<span class="sy0">,</span>j+<span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>/<span class="nu0">4</span><br />
+<br />
+&nbsp; <span class="co1"># Computes the maximum difference between the old and new grid</span><br />
+&nbsp; maxdiff <span class="sy0">=</span> <span class="nu0">0.0</span><br />
+&nbsp; <span class="kw1">for</span> i <span class="kw1">in</span> rows:<br />
+&nbsp; &nbsp; <span class="kw1">for</span> j <span class="kw1">in</span> cols:<br />
+&nbsp; &nbsp; &nbsp; maxdiff <span class="sy0">=</span> <span class="kw2">max</span><span class="br0">&#40;</span>maxdiff<span class="sy0">,</span> <span class="kw2">abs</span><span class="br0">&#40;</span><span class="kw3">new</span><span class="br0">&#91;</span>i<span class="sy0">,</span>j<span class="br0">&#93;</span>-grid<span class="br0">&#91;</span>i<span class="sy0">,</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+<br />
+&nbsp; <span class="co1"># Exits the loop if converged</span><br />
+&nbsp; <span class="kw1">if</span> maxdiff &amp;lt<span class="sy0">;</span> epsilon:<br />
+&nbsp; &nbsp; <span class="kw1">break</span><br />
+<br />
+&nbsp; <span class="co1"># Copies the new grid into grid for the next iteration</span><br />
+&nbsp; grid <span class="sy0">=</span> <span class="kw3">new</span>.<span class="kw3">copy</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div></td></tr></tbody></table></div>
+</pre>
+            <p>Looking at the above algorithm, we see that for each iteration of the main loop on an NxN grid we have to do (N-2)^2 computations (N-2 ignores the boundaries). O(N^2) type algorithms typically lend themselves well to parallelizing. However, I won’t just be parallelizing the Jacobi iteration – I’ll be using parallel multigrid and successive over relaxation methods.
+            </p>
+            <p>&nbsp;
+            </p><h3>Why Multigrid and SOR?</h3>
+            <p>I’m using the advanced techniques above to speed up the algorithm on large grids. I use large grids in a very general sense here – for the purpose of the discussion, a large grid is any grid that doesn’t converge in a reasonable amount of time for you. Both parallel and sequential Jacobi iteration work slowly on large grids. To examine why this is, let’s step through a small grid using Jacobi iteration.
+            </p>
+            <p>
+              <img src="../../../../../cdn.philipbjorge.com/wp-content/uploads/small-grid-slow.jpg" alt="" />
+            </p>
+            <p>First, traditional Jacobi iteration updates the new grid based entirely on values from the old grid. This provides a perfectly accurate result, but it takes N/2 iterations for the boundary values to affect the center of the grid. Intuitively you can see this is true because points only affect the points immediately next to them and in turn a large grid’s center will remain 0.0 for a long time. When the center finally is affected, it’s set to a highly dampened value due to the successive averaging that takes place while propagating (this effect can be seen more optimally on a large graph).
+            </p>
+            <p>Let’s look at the Successive Over Relaxation algorithm and see the two ways in can help speed up convergence.
+            </p>
+<pre>
+<div class="codecolorer-container python mac-classic" style="overflow:auto;white-space:nowrap;width:578px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br /></div></td><td><div class="python codecolorer"><span class="co1"># Assumes a numpy type of grid for indexing</span><br />
+<span class="kw1">while</span> <span class="kw2">True</span>:<br />
+<br />
+&nbsp; <span class="co1"># Computes new values for the inner grid</span><br />
+&nbsp; <span class="co1"># Notice that if i=1..n, j=1..n then</span><br />
+&nbsp; <span class="co1"># every index updates using new North,West neighbors</span><br />
+&nbsp; <span class="kw1">for</span> i <span class="kw1">in</span> rows:<br />
+&nbsp; &nbsp; <span class="kw1">for</span> j <span class="kw1">in</span> cols:<br />
+&nbsp; &nbsp; &nbsp; tmp <span class="sy0">=</span> grid<span class="br0">&#91;</span>i<span class="sy0">,</span>j<span class="br0">&#93;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw3">new</span> <span class="sy0">=</span> omega * <span class="br0">&#40;</span><span class="br0">&#40;</span>grid<span class="br0">&#91;</span>i-<span class="nu0">1</span><span class="sy0">,</span>j<span class="br0">&#93;</span> + grid<span class="br0">&#91;</span>i+<span class="nu0">1</span><span class="sy0">,</span>j<span class="br0">&#93;</span> + grid<span class="br0">&#91;</span>i<span class="sy0">,</span>j-<span class="nu0">1</span><span class="br0">&#93;</span> + grid<span class="br0">&#91;</span>i<span class="sy0">,</span>j+<span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>/<span class="nu0">4</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + <span class="br0">&#40;</span><span class="nu0">1</span>-omega<span class="br0">&#41;</span> * grid<span class="br0">&#91;</span>i<span class="sy0">,</span>j<span class="br0">&#93;</span><br />
+&nbsp; &nbsp; &nbsp; maxdiff <span class="sy0">=</span> <span class="kw2">max</span><span class="br0">&#40;</span>maxidff<span class="sy0">,</span> <span class="kw2">abs</span><span class="br0">&#40;</span>new-tmp<span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; grid<span class="br0">&#91;</span>i<span class="sy0">,</span>j<span class="br0">&#93;</span> <span class="sy0">=</span> <span class="kw3">new</span><br />
+<br />
+&nbsp; <span class="co1"># Exits the loop if converged</span><br />
+&nbsp; <span class="kw1">if</span> maxdiff &amp;lt<span class="sy0">;</span> epsilon:<br />
+&nbsp; &nbsp; <span class="kw1">break</span></div></td></tr></tbody></table></div>
+</pre>
+            <p>First, an omega value is supplied which either overestimates or underestimates the Jacobi value of each point. Second, it updates points in-place based on a combination of old and new values (the new values bring the index closer to its final value than if only old values were consulted). SOR works by making each iteration overcorrect to ideally produce a better answer.
+            </p>
+            <p>So while SOR alleviates part of the problem of slow propagation, it doesn’t reduce the number of iterations it takes for the edges to affect the center. On super large grids (think 10,000&#215;10,000), it’s not just the slow propagation from the edges we need to worry about. On such a large grid, all points are sufficiently far enough apart to require a significant amount of time to affect each other.
+            </p>
+            <p>Multigrid methods can alleviate this problem in a novel way by looking at the superfine grid in multiple levels of coarseness. To visualize this idea, I’m including an image I found in Google (I couldn&#8217;t find an author to attribute it to).
+            </p>
+            <p>
+              <img src="../../../../../cdn.philipbjorge.com/wp-content/uploads/multigridR.jpg" alt="" />
+            </p>
+            <p>Looking at the grid and different quality levels is one thing, but how can this improve the speed of convergence? Multigrid methods perform iterations on the coarser grids and then prolongate these values down to the finer grids. Iterating over the coarser grids gets values quickly that are very rough, but very near the final results. Prolongating these values into the finer grids pushes every point closer to its final value (including the elusive center points). To demonstrate these ideas, I’ve modified an image from Lawrence Livermore National Laboratory’s 
+              <a href="https://www.llnl.gov/str/December03/Falgout.html" target="_blank">website</a>.
+            </p>
+            <p>
+              <img src="../../../../../cdn.philipbjorge.com/wp-content/uploads/multigridbenefits.jpg" alt="" />
+            </p>
+            <p>&nbsp;
+            </p><h3>Part 3…</h3>
+            <p>In the final segment, I’ll describe the implementation details of multigrid and SOR methods in Ada and how to parallelize them. I’ll also include some of the more beautiful visualizations I created in Mayavi.
+            </p><h5>
+              <a title="2D Multigrid &amp; Red-Black SOR in Ada95… Part 3" href="../../../../2012/01/22/2d-multigrid-red-black-sor-in-ada95-part-3/index.html">Part 3</a></h5>					 				 				 				
+            <!-- #leave-comment -->				 			
+          </div> 
+  </body>
+</html>	 
+<!-- Dynamic page generated in 0.477 seconds. --> 
+<!-- Cached page generated by WP-Super-Cache on 2012-06-02 09:05:56 --> 
+<!-- super cache -->

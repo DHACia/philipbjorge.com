@@ -1,0 +1,132 @@
+	 	 	
+<!DOCTYPE html >	
+<html dir="ltr" lang="en-US">	 	
+  <head>		 		 		 		
+    <meta charset="UTF-8" />		 		 		
+    <title>		 			  Sharing Data Among Processes (alternatively, the memory management blues) - Philip Bjorge 			 		
+    </title>		 		
+    <!-- Favicon --> 		 	 			
+    <link rel="shortcut icon" href="http://philipbjorge.nfshost.com/wp-content/uploads/favicon.ico" type="image/x-icon" />			 		 		 		
+    <!-- Main stylesheet (style.css) --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/style.css" type="text/css" />		 		
+    <!-- Skin --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/css/skin-2.css" type="text/css" />		 		
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>		
+    <style type="text/css">			h1, h2, h3, h4, h5, h6 { font-family:"PT Sans" !important; } 			#fancybox-loading.fancybox-ie div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_loading.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-close		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_close.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-over	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_over.png', sizingMethod='scale'); zoom: 1; } 			.fancybox-ie #fancybox-title-left	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_left.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-main	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_main.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-right	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_right.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-left-ico		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_nav_left.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-right-ico	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_nav_right.png', sizingMethod='scale'); } 			.fancybox-ie .fancy-bg { background: transparent !important; } 			.fancybox-ie #fancy-bg-n	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_n.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-ne	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_ne.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-e	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_e.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-se	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_se.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-s	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_s.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-sw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_sw.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-w	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_w.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-nw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_nw.png', sizingMethod='scale'); } 		
+    </style>		 		
+    <!-- Lightbox --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/css/jquery.fancybox-1.3.1.css" type="text/css" />		 		
+    <!-- Pingback --> 		
+    <link rel="pingback" href="../../../../xmlrpc.php" />		 		 		
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; Feed" href="../../../../feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; Comments Feed" href="../../../../comments/feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; Sharing Data Among Processes (alternatively, the memory management blues) Comments Feed" href="http://www.philipbjorge.com/2012/04/18/sharing-data-among-processes-alternatively-the-memory-management-blues/feed/" />
+    <link rel='stylesheet' id='codecolorer-css'  href='../../../../../cdn.philipbjorge.com/wp-content/plugins/codecolorer/codecolorer.css@ver=0.9.9.css' type='text/css' media='screen' />
+
+  </head>	 	 	
+  <body class="single single-post postid-428 single-format-standard">
+  
+          <div class="blog-item">				 				
+            <!-- Title --> 				 					<h1>Sharing Data Among Processes (alternatively, the memory management blues)</h1>	 				 				 				
+            <!-- Info --> 				 		 		
+            <div class="entry-meta">			
+              <span class="post-date">
+                <span class="day">18
+                </span>
+                <span class="month">Apr
+                </span>
+              </span>  				
+            </div>		 		 				 				
+            <!-- Thumbnail --> 				
+            <div class="image">					
+              <img width="560" height="194" src="../../../../../cdn.philipbjorge.com/wp-content/uploads/bsod-560x194.jpg" class="attachment-post-thumbnail wp-post-image" alt="bsod" title="bsod" />				
+            </div>				 				 					 					
+            <p>I never thought I&#8217;d run into a problem with OS memory management, but it seems I&#8217;ve finally crossed that barrier. While writing a python script for correcting missing values in the PNWMoths database, I found out I needed to parallelize the work in some fashion after seeing how long it was going to take the script to produce output (It&#8217;s a O(n^2) with n approximately ~50k; this could be optimized with heuristics, but data accuracy takes 
+              <em>huge
+              </em> precedence over optimization). Since I already had a working python script and the problem was trivially parallel, I assumed it&#8217;d be reasonably straightforward to parallelize. And it would have been, had I been using an 
+              <a href="http://stackoverflow.com/questions/4534687/python-sharing-huge-dictionaries-using-multiprocessing">OS with modern memory management</a>.
+            </p>
+            <p>Since the data I need to share between processes is only around ~10MB, I came upon the alternate solution of chunking the data up so that each process instance could read a full copy of the CSV into memory without overflowing to the disk. Long story short, I got it working with only a minor annoyance courtesy of Windows.
+            </p>
+            <p>Enjoy the sparsely commented, cobbled together prototype. 
+<pre> 
+<div class="codecolorer-container python mac-classic" style="overflow:auto;white-space:nowrap;width:578px;height:450px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />41<br />42<br />43<br />44<br />45<br />46<br />47<br />48<br />49<br />50<br />51<br />52<br />53<br />54<br />55<br />56<br />57<br />58<br />59<br />60<br />61<br />62<br />63<br />64<br />65<br />66<br />67<br />68<br />69<br />70<br />71<br />72<br />73<br /></div></td><td><div class="python codecolorer"><span class="kw1">import</span> <span class="kw3">csv</span><br /> 
+<span class="kw1">import</span> <span class="kw3">cStringIO</span><br /> 
+<span class="kw1">import</span> Levenshtein<br /> 
+<span class="kw1">from</span> multiprocessing <span class="kw1">import</span> Pool<br /> 
+<span class="kw1">import</span> multiprocessing<br /> 
+<span class="kw1">import</span> <span class="kw3">Queue</span><br /> 
+<span class="kw1">import</span> <span class="kw3">time</span><br /> 
+<br /> 
+<span class="kw1">def</span> f<span class="br0">&#40;</span>db_r<span class="br0">&#41;</span>:<br />
+&nbsp; cs <span class="sy0">=</span> <span class="kw2">open</span><span class="br0">&#40;</span><span class="st0">&quot;csv.csv&quot;</span><span class="br0">&#41;</span><br />
+&nbsp; csv_r <span class="sy0">=</span> <span class="kw2">list</span><span class="br0">&#40;</span><span class="kw3">csv</span>.<span class="me1">reader</span><span class="br0">&#40;</span>cs<span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; cs.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><br />
+&nbsp; perfect <span class="sy0">=</span> <span class="br0">&#91;</span><span class="br0">&#93;</span><br />
+&nbsp; unmatched <span class="sy0">=</span> <span class="br0">&#91;</span><span class="br0">&#93;</span><br />
+&nbsp; possible <span class="sy0">=</span> <span class="br0">&#91;</span><span class="br0">&#93;</span><br />
+&nbsp; <br />
+&nbsp; <span class="kw1">for</span> r <span class="kw1">in</span> db_r:<br />
+&nbsp; &nbsp; m <span class="sy0">=</span> <span class="kw2">len</span><span class="br0">&#40;</span>r<span class="br0">&#41;</span>-r.<span class="me1">count</span><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; candidates <span class="sy0">=</span> <span class="br0">&#91;</span><span class="br0">&#93;</span><br />
+&nbsp; &nbsp; perfect_match <span class="sy0">=</span> <span class="kw2">False</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; <span class="kw1">for</span> s <span class="kw1">in</span> csv_r:<br />
+&nbsp; &nbsp; &nbsp; <span class="co1"># compute score</span><br />
+&nbsp; &nbsp; &nbsp; score <span class="sy0">=</span> <span class="nu0">0</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">for</span> i <span class="kw1">in</span> <span class="kw2">xrange</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="kw2">min</span><span class="br0">&#40;</span><span class="kw2">len</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw2">len</span><span class="br0">&#40;</span>r<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span><span class="br0">&#40;</span>Levenshtein.<span class="me1">ratio</span><span class="br0">&#40;</span>r<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span> s<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="sy0">&gt;</span> <span class="nu0">0.8</span><span class="br0">&#41;</span>:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; score +<span class="sy0">=</span> <span class="nu0">1</span><br />
+&nbsp; &nbsp; &nbsp; <span class="co1"># put in candidate list</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> score <span class="sy0">==</span> <span class="kw2">len</span><span class="br0">&#40;</span>r<span class="br0">&#41;</span>:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; perfect.<span class="me1">append</span><span class="br0">&#40;</span>r<span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; perfect_match <span class="sy0">=</span> <span class="kw2">True</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">break</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">elif</span> score <span class="sy0">&gt;=</span> m:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; candidates.<span class="me1">append</span><span class="br0">&#40;</span> <span class="br0">&#123;</span><span class="st0">&quot;score&quot;</span>: score<span class="sy0">,</span> <span class="st0">&quot;row&quot;</span>: s<span class="br0">&#125;</span> <span class="br0">&#41;</span><br /> 
+<br />
+&nbsp; &nbsp; <span class="kw1">if</span> perfect_match:<br />
+&nbsp; &nbsp; &nbsp; perfect.<span class="me1">append</span><span class="br0">&#40;</span>r<span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">break</span><br /> 
+<br />
+&nbsp; &nbsp; <span class="kw1">if</span> <span class="kw2">len</span><span class="br0">&#40;</span>candidates<span class="br0">&#41;</span> <span class="sy0">==</span> <span class="nu0">0</span>:<br />
+&nbsp; &nbsp; &nbsp; unmatched.<span class="me1">append</span><span class="br0">&#40;</span>r<span class="br0">&#41;</span><br />
+&nbsp; &nbsp; <span class="kw1">else</span>:<br />
+&nbsp; &nbsp; &nbsp; <span class="co1"># sort candidates by score</span><br />
+&nbsp; &nbsp; &nbsp; sort_on <span class="sy0">=</span> <span class="st0">&quot;score&quot;</span><br />
+&nbsp; &nbsp; &nbsp; decorated <span class="sy0">=</span> <span class="br0">&#91;</span><span class="br0">&#40;</span>dict_<span class="br0">&#91;</span>sort_on<span class="br0">&#93;</span><span class="sy0">,</span> dict_<span class="br0">&#41;</span> <span class="kw1">for</span> dict_ <span class="kw1">in</span> candidates<span class="br0">&#93;</span><br />
+&nbsp; &nbsp; &nbsp; decorated.<span class="me1">sort</span><span class="br0">&#40;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; ranked <span class="sy0">=</span> <span class="br0">&#91;</span>dict_ <span class="kw1">for</span> <span class="br0">&#40;</span>key<span class="sy0">,</span> dict_<span class="br0">&#41;</span> <span class="kw1">in</span> decorated<span class="br0">&#93;</span><br />
+&nbsp; &nbsp; &nbsp; <br />
+&nbsp; &nbsp; &nbsp; <span class="co1"># store</span><br />
+&nbsp; &nbsp; &nbsp; possible.<span class="me1">append</span><span class="br0">&#40;</span> <span class="br0">&#123;</span><span class="st0">&quot;candidates&quot;</span>: ranked<span class="sy0">,</span> <span class="st0">&quot;row&quot;</span>: r<span class="br0">&#125;</span> <span class="br0">&#41;</span><br />
+&nbsp; <span class="kw1">return</span> <span class="br0">&#123;</span><span class="st0">&quot;worker&quot;</span>: multiprocessing.<span class="me1">current_process</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">name</span><span class="sy0">,</span> <span class="st0">&quot;perfect&quot;</span>: perfect<span class="sy0">,</span> <span class="st0">&quot;unmatched&quot;</span>: unmatched<span class="sy0">,</span> <span class="st0">&quot;possible&quot;</span>: possible<span class="br0">&#125;</span><br /> 
+<br /> 
+<span class="kw1">if</span> __name__ <span class="sy0">==</span> <span class="st0">'__main__'</span>:<br />
+&nbsp; db <span class="sy0">=</span> <span class="kw2">open</span><span class="br0">&#40;</span><span class="st0">&quot;db.csv&quot;</span><span class="br0">&#41;</span><br />
+&nbsp; db_r <span class="sy0">=</span> <span class="kw2">list</span><span class="br0">&#40;</span><span class="kw3">csv</span>.<span class="me1">reader</span><span class="br0">&#40;</span>db<span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; db.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><br />
+&nbsp; <br />
+&nbsp; <span class="kw1">def</span> chunks<span class="br0">&#40;</span>l<span class="sy0">,</span> n<span class="br0">&#41;</span>:<br />
+&nbsp; &nbsp; <span class="st0">&quot;&quot;&quot; Yield successive n-sized chunks from l.<br />
+&nbsp; &nbsp; &quot;&quot;&quot;</span><br />
+&nbsp; &nbsp; <span class="kw1">for</span> i <span class="kw1">in</span> <span class="kw2">xrange</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="kw2">len</span><span class="br0">&#40;</span>l<span class="br0">&#41;</span><span class="sy0">,</span> n<span class="br0">&#41;</span>:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">yield</span> l<span class="br0">&#91;</span>i:i+n<span class="br0">&#93;</span><br />
+&nbsp; <br />
+&nbsp; processes <span class="sy0">=</span> <span class="nu0">4</span><br />
+&nbsp; factor <span class="sy0">=</span> <span class="nu0">1</span><br />
+&nbsp; db_r <span class="sy0">=</span> <span class="kw2">list</span><span class="br0">&#40;</span>chunks<span class="br0">&#40;</span>db_r<span class="sy0">,</span> <span class="kw2">int</span><span class="br0">&#40;</span><span class="kw2">len</span><span class="br0">&#40;</span>db_r<span class="br0">&#41;</span>/processes*factor<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; <br />
+&nbsp; pool <span class="sy0">=</span> Pool<span class="br0">&#40;</span>processes<span class="br0">&#41;</span><br />
+&nbsp; result <span class="sy0">=</span> pool.<span class="kw2">map</span><span class="br0">&#40;</span>f<span class="sy0">,</span> db_r<span class="br0">&#41;</span><br /> 
+<br />
+&nbsp; <span class="co1">#output</span><br />
+&nbsp; <span class="kw1">import</span> <span class="kw3">pprint</span><br />
+&nbsp; <span class="kw3">pprint</span>.<span class="kw3">pprint</span><span class="br0">&#40;</span>result<span class="sy0">,</span> <span class="kw2">open</span><span class="br0">&#40;</span><span class="st0">&quot;out.txt&quot;</span><span class="sy0">,</span> <span class="st0">&quot;w&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></div></td></tr></tbody></table></div> 
+</pre> 					 				
+        </div> 
+  </body>
+</html>	 
+<!-- Dynamic page generated in 0.503 seconds. --> 
+<!-- Cached page generated by WP-Super-Cache on 2012-06-02 09:05:38 --> 
+<!-- super cache -->

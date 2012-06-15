@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block js %}
+<link rel="stylesheet" href="/css/galleria/classic/galleria.classic.css">
+<script src="/js/galleria-1.2.7.min.js"></script>
+<script src="/css/galleria/classic/galleria.classic.min.js"></script>
+<script type="text/javascript">
+$().ready(function() {
+	Galleria.configure({
+		responsive: true,
+	});
+    Galleria.run('#galleria');
+});
+</script>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+	{% if page.gallery %}
+		<div id="galleria">
+		{% for img in page.gallery %}
+			<a href="{{ img|replace('{img_width}', '800') }}"><img src="{{ img|replace('{img_width}', '100') }}" longdesc="{{ img|replace('{img_width}', '0') }}" /></a>
+		{% endfor %}
+		</div>
+	{% endif %}
+    {{ page.content }}
+{% endblock %}
+
+{% block right_col %}
+<div class="commentsColumn">
+  <div class="commentsColumnInner">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'philipbjorge'; // required: replace example with your forum shortname
+        var disqus_developer = 1;
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+{% endblock %}

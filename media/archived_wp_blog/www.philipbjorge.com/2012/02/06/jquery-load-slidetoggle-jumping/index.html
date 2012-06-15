@@ -1,0 +1,89 @@
+	 	 	
+<!DOCTYPE html >	
+<html dir="ltr" lang="en-US">	 	
+  <head>		 		 		 		
+    <meta charset="UTF-8" />		 		 		
+    <title>		 			  jQuery Load SlideToggle Jumping - Philip Bjorge 			 		
+    </title>		 		
+    <!-- Favicon --> 		 	 			
+    <link rel="shortcut icon" href="http://philipbjorge.nfshost.com/wp-content/uploads/favicon.ico" type="image/x-icon" />			 		 		 		
+    <!-- Main stylesheet (style.css) --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/style.css" type="text/css" />		 		
+    <!-- Skin --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/css/skin-2.css" type="text/css" />		 		
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>		
+    <style type="text/css">			h1, h2, h3, h4, h5, h6 { font-family:"PT Sans" !important; } 			#fancybox-loading.fancybox-ie div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_loading.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-close		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_close.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-over	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_over.png', sizingMethod='scale'); zoom: 1; } 			.fancybox-ie #fancybox-title-left	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_left.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-main	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_main.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-right	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_right.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-left-ico		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_nav_left.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-right-ico	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_nav_right.png', sizingMethod='scale'); } 			.fancybox-ie .fancy-bg { background: transparent !important; } 			.fancybox-ie #fancy-bg-n	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_n.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-ne	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_ne.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-e	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_e.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-se	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_se.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-s	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_s.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-sw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_sw.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-w	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_w.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-nw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_nw.png', sizingMethod='scale'); } 		
+    </style>		 		
+    <!-- Lightbox --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/css/jquery.fancybox-1.3.1.css" type="text/css" />		 		
+    <!-- Pingback --> 		
+    <link rel="pingback" href="../../../../xmlrpc.php" />		 		 		
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; Feed" href="../../../../feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; Comments Feed" href="../../../../comments/feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; jQuery Load SlideToggle Jumping Comments Feed" href="http://www.philipbjorge.com/2012/02/06/jquery-load-slidetoggle-jumping/feed/" />
+    <link rel='stylesheet' id='codecolorer-css'  href='../../../../../cdn.philipbjorge.com/wp-content/plugins/codecolorer/codecolorer.css@ver=0.9.9.css' type='text/css' media='screen' />
+
+  </head>	 	 	
+  <body class="single single-post postid-351 single-format-standard">	 			
+          <div class="blog-item">				 				
+            <!-- Title --> 				 					<h1>jQuery Load SlideToggle Jumping</h1>	 				 				 				
+            <!-- Info --> 				 		 		
+            <div class="entry-meta">			
+              <span class="post-date">
+                <span class="day">6
+                </span>
+                <span class="month">Feb
+                </span>
+              </span>  			
+            </div>		 		 				 				
+            <!-- Thumbnail --> 				
+            <div class="image">					
+              <img width="570" height="194" src="../../../../../cdn.philipbjorge.com/wp-content/uploads/jqueryscrolltoggle-570x194.jpg" class="attachment-post-thumbnail wp-post-image" alt="jqueryscrolltoggle" title="jqueryscrolltoggle" />				
+            </div>				 				 					 					
+            <p>When I began blogging, I envisioned that the majority of my posts would be similar to this one &#8211; documenting interesting quirks and bug fixes. Of course, nearly every quirk or fix I&#8217;ve come across has already been documented on various blogs across the internet &#8211; until now!
+            </p>
+            <p>&nbsp;
+            </p><h3>The Problem</h3>
+            <p>When working on the taxonomic browser for PNW Moths, I had an issue with the jQuery slidetoggle command jumping when displaying AJAX loaded content for the first time. The root problem whenever you have  a jumpy/jerky slidetoggle is that jQuery has calculated the wrong height for your container. The most common fix for this problem, setting a static width, has a good writeup at 
+              <a href="http://jqueryfordesigners.com/slidedown-animation-jump-revisited/">jQuery for Designers</a>. Even after applying this fix, the problem still persisted on the server.
+            </p>
+            <p>&nbsp;
+            </p><h3>The Diagnosis</h3>
+            <p>On one test, I happened to notice the image content flash in while the div was sliding in &#8211; this, coupled with the fact that the problem didn&#8217;t occur on localhost made me realize something about the jQuery.load() completion callback. jQuery fires the callback when the HTML content has loaded, but not necessarily the image resources that the HTML refers to. In my case, scrolltoggle was calculating the hidden div&#8217;s height when a majority of the images hadn&#8217;t fully loaded, giving the animation an inaccurate height and causing a jump.
+            </p>
+            <p>&nbsp;
+            </p><h3>The Solution</h3>
+            <p><strong>The solution is to wait to call scrolltoggle until after the images have loaded, which I did with the help of 
+                <a href="https://github.com/alexanderdickson/waitForImages">Alexander Dickson&#8217;s waitForImages plugin</a> (waiting for images is a surprisingly tricky thing to do cross-browser).</strong>
+            </p>
+<pre>
+<div class="codecolorer-container javascript mac-classic" style="overflow:auto;white-space:nowrap;width:578px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br /></div></td><td><div class="javascript codecolorer"><span class="co1">// Toggle on click</span><br />
+jQuery<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span>.<span class="me1">find</span><span class="br0">&#40;</span><span class="st0">'.toggle_item'</span><span class="br0">&#41;</span>.<span class="me1">click</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>jQuery<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span>.<span class="me1">parent</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">siblings</span><span class="br0">&#40;</span><span class="st0">'.ajax'</span><span class="br0">&#41;</span>.<span class="me1">html</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">length</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">// If we've loaded the content before, just show it</span><br />
+&nbsp; &nbsp; jQuery<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span>.<span class="me1">parent</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">siblings</span><span class="br0">&#40;</span><span class="st0">'.ajax'</span><span class="br0">&#41;</span>.<span class="me1">slideToggle</span><span class="br0">&#40;</span><span class="st0">'slow'</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">// Otherwise, load it via AJAX</span><br />
+&nbsp; &nbsp; jQuery<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span>.<span class="me1">parent</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">siblings</span><span class="br0">&#40;</span><span class="st0">'.ajax'</span><span class="br0">&#41;</span>.<span class="me1">load</span><span class="br0">&#40;</span>url <span class="sy0">+</span> <span class="st0">' .browse_item'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; jQuery<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span>.<span class="me1">waitForImages</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jQuery<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span>.<span class="me1">slideToggle</span><span class="br0">&#40;</span><span class="st0">'slow'</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <span class="kw2">false</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+<span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></td></tr></tbody></table></div>
+</pre>
+            <p>&nbsp;
+            </p>
+            <p>If this post ever saves you an hour, please drop a comment below!
+            </p>
+            <p>On another note, I apologize to my readers for the lack of posts recently; school and work has been extremely hectic this quarter. However, that doesn&#8217;t mean I haven&#8217;t been programming interesting things&#8230; I have another exciting post in the works detailing a simple Ant AI I wrote and a preview of a mobile application I&#8217;m working on.
+            </p>
+            <p>P.S. Code readability has been improved with a new jQuery effect (Try mousing over).
+            </p>			
+    </div>	 	 	 	
+  </body>
+</html>	 
+<!-- Dynamic page generated in 0.497 seconds. --> 
+<!-- Cached page generated by WP-Super-Cache on 2012-06-02 09:05:42 --> 
+<!-- super cache -->

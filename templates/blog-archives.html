@@ -1,0 +1,17 @@
+{# Blog archives template #}
+
+{% extends "base.html" %}
+
+{% block content %}
+<ul id="archive_list">
+{% for subpage in site.categories["blog"]|sort(attribute='datetime', reverse=True) %}
+	<li>
+		  <h2 class="entry-title"><a href="{{ subpage.url }}">{{ subpage.title }}</a></h2>
+		  <div class="meta">
+			<time datetime="{{ subpage.datetime }}" pubdate>{% if subpage.datetime %}{{ subpage.datetime.strftime("%A %B %d, %Y")}}{% endif %}</time>
+		  </div>
+		  {% if not loop.last %}<hr />{% endif %}
+	</li>
+{% endfor %}
+</ul>
+{% endblock %}

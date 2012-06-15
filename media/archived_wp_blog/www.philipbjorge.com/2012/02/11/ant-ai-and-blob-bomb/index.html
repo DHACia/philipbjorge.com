@@ -1,0 +1,565 @@
+	 	 	
+<!DOCTYPE html >	
+<html dir="ltr" lang="en-US">	 	
+  <head>		 		 		 		
+    <meta charset="UTF-8" />		 		 		
+    <title>		 			  Addepar Ant AI &amp; Blob-Bomb - Philip Bjorge 			 		
+    </title>		 		
+    <!-- Favicon --> 		 	 			
+    <link rel="shortcut icon" href="http://philipbjorge.nfshost.com/wp-content/uploads/favicon.ico" type="image/x-icon" />			 		 		 		
+    <!-- Main stylesheet (style.css) --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/style.css" type="text/css" />		 		
+    <!-- Skin --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/css/skin-2.css" type="text/css" />		 		
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>		
+    <style type="text/css">			h1, h2, h3, h4, h5, h6 { font-family:"PT Sans" !important; } 			#fancybox-loading.fancybox-ie div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_loading.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-close		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_close.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-over	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_over.png', sizingMethod='scale'); zoom: 1; } 			.fancybox-ie #fancybox-title-left	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_left.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-main	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_main.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-title-right	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_title_right.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-left-ico		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_nav_left.png', sizingMethod='scale'); } 			.fancybox-ie #fancybox-right-ico	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_nav_right.png', sizingMethod='scale'); } 			.fancybox-ie .fancy-bg { background: transparent !important; } 			.fancybox-ie #fancy-bg-n	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_n.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-ne	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_ne.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-e	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_e.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-se	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_se.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-s	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_s.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-sw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_sw.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-w	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_w.png', sizingMethod='scale'); } 			.fancybox-ie #fancy-bg-nw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.philipbjorge.com/wp-content/themes/brainstorm/images/fancybox/fancy_shadow_nw.png', sizingMethod='scale'); } 		
+    </style>		 		
+    <!-- Lightbox --> 		
+    <link rel="stylesheet" href="../../../../../cdn.philipbjorge.com/wp-content/themes/brainstorm/css/jquery.fancybox-1.3.1.css" type="text/css" />		 		
+    <!-- Pingback --> 		
+    <link rel="pingback" href="../../../../xmlrpc.php" />		 		 		
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; Feed" href="../../../../feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; Comments Feed" href="../../../../comments/feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Philip Bjorge &raquo; Addepar Ant AI &amp; Blob-Bomb Comments Feed" href="http://www.philipbjorge.com/2012/02/11/ant-ai-and-blob-bomb/feed/" />
+    <link rel='stylesheet' id='codecolorer-css'  href='../../../../../cdn.philipbjorge.com/wp-content/plugins/codecolorer/codecolorer.css@ver=0.9.9.css' type='text/css' media='screen' />
+
+  </head>	 	 	
+  <body class="single single-post postid-370 single-format-standard">	
+          <div class="blog-item">				 				
+            <!-- Title --> 				 					<h1>Addepar Ant AI &#038; Blob-Bomb</h1>	 				 				 				
+            <!-- Info --> 				 		 		
+            <div class="entry-meta">			
+              <span class="post-date">
+                <span class="day">11
+                </span>
+                <span class="month">Feb
+                </span>
+              </span>  			
+            </div>		 		 				 				
+            <!-- Thumbnail --> 				
+            <div class="image">					
+              <img width="570" height="194" src="../../../../../cdn.philipbjorge.com/wp-content/uploads/ants-570x194.jpg" class="attachment-post-thumbnail wp-post-image" alt="ants" title="ants" />				
+            </div>				 				 					 					
+            <p>
+              <a href="http://addepar.com/">Addepar</a> requests that internship applicants program an ant AI in Java. This was my first experience programming an AI, so I stuck with classic techniques like state machines and A* pathfinding to be sure I ended up with something functional. In this article, I&#8217;ll be documenting the challenge, my strategy, and possible improvements. I&#8217;ll also include a sneak-peek of my newest game project.
+            </p>
+            <p>&nbsp;
+            </p><h3>The Rules</h3>
+            <ol class="bullets blue" style="padding-top: 8px;">
+              <li>You start out with 3 ants on an anthill with 1 ant being generated every 10 turns.
+              </li>
+              <li>Each turn, every ant can perform one of the following moves: Halt, Gather, Drop off, or move one square.
+              </li>
+              <li>The ants can trade information if they are on the same square.
+              </li>
+              <li>Ants can see one square in all four directions and the square they are standing on.
+              </li>
+              <li>The goal is to collect ~80% of the food in as few turns as possible.
+              </li>
+            </ol>
+            <p>&nbsp;
+            </p>
+            <p>
+              <a href="http://addepar.com/challenge.php">Rules</a><br />
+              <a href="http://addepar.com/downloads/challenge/javadoc/ants/package-summary.html">API Docs</a>
+            </p>
+            <p>&nbsp;
+            </p><h3>My Strategy</h3>
+            <ol class="bullets blue" style="padding-top: 8px;">
+              <li>Ants record all tile information they can, building up a mental map.
+              </li>
+              <li>Ants trade and merge their mental maps whenever they land on the same tile.
+              </li>
+              <li>Ants lean preferentially towards known food sources versus the unknown (distance breaks ties).
+              </li>
+              <li>Ants determine the shortest route to a food source using the A* algorithm.
+              </li>
+            </ol>
+            <p>&nbsp;
+            </p><h3>Results</h3>
+            <p>
+              <iframe src="http://www.youtube-nocookie.com/embed/Bws3LVObILU" frameborder="0" width="590" height="430">
+              </iframe>
+            </p>
+            <p>Overall, the AI functions pretty well – you can clearly see the ants are following a strategy. The limitations on what an ant can know about it’s environment made for a fun programming challenge.
+            </p>
+            <p>If I had time to improve the AI, I’d probably look at optimizing how the ants balance known food sources versus discovery – This could be done by building a test harness that ran a couple days worth of tests and recorded the results depending on the “discovery constant.” This would allow a host of other optimizations by allowing me to test answering other questions like “Does sitting on the anthill for a certain number of ticks improve knowledge and in turn food acquisition?” This testing harness would probably provide the most bang-for-my-buck coding wise.
+            </p>
+            <p>In the future, I’d like to try a bottom up approach to developing and see if that improves my ability to write more loosely coupled classes. I’m not terribly happy with the code organization. Looking into extending Java’s built-in data structures would probably improve code readability as well. Without further adieu, here is the code:
+            </p>
+<pre>
+<div class="codecolorer-container java mac-classic" style="overflow:auto;white-space:nowrap;width:578px;height:450px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />41<br />42<br />43<br />44<br />45<br />46<br />47<br />48<br />49<br />50<br />51<br />52<br />53<br />54<br />55<br />56<br />57<br />58<br />59<br />60<br />61<br />62<br />63<br />64<br />65<br />66<br />67<br />68<br />69<br />70<br />71<br />72<br />73<br />74<br />75<br />76<br />77<br />78<br />79<br />80<br />81<br />82<br />83<br />84<br />85<br />86<br />87<br />88<br />89<br />90<br />91<br />92<br />93<br />94<br />95<br />96<br />97<br />98<br />99<br />100<br />101<br />102<br />103<br />104<br />105<br />106<br />107<br />108<br />109<br />110<br />111<br />112<br />113<br />114<br />115<br />116<br />117<br />118<br />119<br />120<br />121<br />122<br />123<br />124<br />125<br />126<br />127<br />128<br />129<br />130<br />131<br />132<br />133<br />134<br />135<br />136<br />137<br />138<br />139<br />140<br />141<br />142<br />143<br />144<br />145<br />146<br />147<br />148<br />149<br />150<br />151<br />152<br />153<br />154<br />155<br />156<br />157<br />158<br />159<br />160<br />161<br />162<br />163<br />164<br />165<br />166<br />167<br />168<br />169<br />170<br />171<br />172<br />173<br />174<br />175<br />176<br />177<br />178<br />179<br />180<br />181<br />182<br />183<br />184<br />185<br />186<br />187<br />188<br />189<br />190<br />191<br />192<br />193<br />194<br />195<br />196<br />197<br />198<br />199<br />200<br />201<br />202<br />203<br />204<br />205<br />206<br />207<br />208<br />209<br />210<br />211<br />212<br />213<br />214<br />215<br />216<br />217<br />218<br />219<br />220<br />221<br />222<br />223<br />224<br />225<br />226<br />227<br />228<br />229<br />230<br />231<br />232<br />233<br />234<br />235<br />236<br />237<br />238<br />239<br />240<br />241<br />242<br />243<br />244<br />245<br />246<br />247<br />248<br />249<br />250<br />251<br />252<br />253<br />254<br />255<br />256<br />257<br />258<br />259<br />260<br />261<br />262<br />263<br />264<br />265<br />266<br />267<br />268<br />269<br />270<br />271<br />272<br />273<br />274<br />275<br />276<br />277<br />278<br />279<br />280<br />281<br />282<br />283<br />284<br />285<br />286<br />287<br />288<br />289<br />290<br />291<br />292<br />293<br />294<br />295<br />296<br />297<br />298<br />299<br />300<br />301<br />302<br />303<br />304<br />305<br />306<br />307<br />308<br />309<br />310<br />311<br />312<br />313<br />314<br />315<br />316<br />317<br />318<br />319<br />320<br />321<br />322<br />323<br />324<br />325<br />326<br />327<br />328<br />329<br />330<br />331<br />332<br />333<br />334<br />335<br />336<br />337<br />338<br />339<br />340<br />341<br />342<br />343<br />344<br />345<br />346<br />347<br />348<br />349<br />350<br />351<br />352<br />353<br />354<br />355<br />356<br />357<br />358<br />359<br />360<br />361<br />362<br />363<br />364<br />365<br />366<br />367<br />368<br />369<br />370<br />371<br />372<br />373<br />374<br />375<br />376<br />377<br />378<br />379<br />380<br />381<br />382<br />383<br />384<br />385<br />386<br />387<br />388<br />389<br />390<br />391<br />392<br />393<br />394<br />395<br />396<br />397<br />398<br />399<br />400<br />401<br />402<br />403<br />404<br />405<br />406<br />407<br />408<br />409<br />410<br />411<br />412<br />413<br />414<br />415<br />416<br />417<br />418<br />419<br />420<br />421<br />422<br />423<br />424<br />425<br />426<br />427<br />428<br />429<br />430<br />431<br />432<br />433<br />434<br />435<br />436<br />437<br />438<br />439<br />440<br />441<br />442<br />443<br />444<br />445<br />446<br />447<br />448<br />449<br />450<br />451<br /></div></td><td><div class="java codecolorer"><span class="kw1">import</span> <span class="co2">ants.*</span><span class="sy0">;</span><br />
+<span class="kw1">import</span> <span class="co2">java.io.ByteArrayInputStream</span><span class="sy0">;</span><br />
+<span class="kw1">import</span> <span class="co2">java.io.ByteArrayOutputStream</span><span class="sy0">;</span><br />
+<span class="kw1">import</span> <span class="co2">java.io.DataInputStream</span><span class="sy0">;</span><br />
+<span class="kw1">import</span> <span class="co2">java.io.DataOutputStream</span><span class="sy0">;</span><br />
+<span class="kw1">import</span> <span class="co2">java.io.IOException</span><span class="sy0">;</span><br />
+<span class="kw1">import</span> <span class="co2">java.util.ArrayList</span><span class="sy0">;</span><br />
+<span class="kw1">import</span> <span class="co2">java.util.HashMap</span><span class="sy0">;</span><br />
+<span class="kw1">import</span> <span class="co2">java.util.HashSet</span><span class="sy0">;</span><br />
+<span class="kw1">import</span> <span class="co2">java.util.Iterator</span><span class="sy0">;</span><br />
+<span class="kw1">import</span> <span class="co2">java.util.LinkedList</span><span class="sy0">;</span><br />
+<span class="kw1">import</span> <span class="co2">java.util.Set</span><span class="sy0">;</span><br />
+<br />
+<span class="kw1">public</span> <span class="kw1">class</span> MyAnt <span class="kw1">implements</span> Ant<span class="br0">&#123;</span><br />
+<br />
+&nbsp; <span class="kw1">private</span> Brain MyBrain <span class="sy0">=</span> <span class="kw1">new</span> Brain<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+<br />
+&nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aaction+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Action</span></a> getAction<span class="br0">&#40;</span>Surroundings surroundings<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">// Always load up my brain with new information.</span><br />
+&nbsp; &nbsp; <span class="co1">// Knowledge is Power!</span><br />
+&nbsp; &nbsp; Surroundings s <span class="sy0">=</span> surroundings<span class="sy0">;</span><br />
+&nbsp; &nbsp; MyBrain.<span class="me1">loadCurrent</span><span class="br0">&#40;</span>s.<span class="me1">getCurrentTile</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">getAmountOfFood</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; MyBrain.<span class="me1">loadSurroundings</span><span class="br0">&#40;</span>s.<span class="me1">getTile</span><span class="br0">&#40;</span>Direction.<span class="me1">NORTH</span><span class="br0">&#41;</span>, s.<span class="me1">getTile</span><span class="br0">&#40;</span>Direction.<span class="me1">EAST</span><span class="br0">&#41;</span>, s.<span class="me1">getTile</span><span class="br0">&#40;</span>Direction.<span class="me1">WEST</span><span class="br0">&#41;</span>, s.<span class="me1">getTile</span><span class="br0">&#40;</span>Direction.<span class="me1">SOUTH</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">return</span> MyBrain.<span class="me1">getAction</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; <span class="kw1">public</span> <span class="kw4">byte</span><span class="br0">&#91;</span><span class="br0">&#93;</span> send<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">// Sends a byte[] of a list of integers in the following order</span><br />
+&nbsp; &nbsp; <span class="co1">// x, y, food, frontier? ... and so on</span><br />
+&nbsp; &nbsp; <span class="kw1">try</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> MyBrain.<span class="me1">dataOutput</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aioexception+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">IOException</span></a> e<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; e.<span class="me1">printStackTrace</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <span class="kw2">null</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; <span class="kw1">public</span> <span class="kw4">void</span> receive<span class="br0">&#40;</span><span class="kw4">byte</span><span class="br0">&#91;</span><span class="br0">&#93;</span> data<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">// Recieves a byte[] of a list of Integers in x, y, food, frontier? ... and so on order</span><br />
+&nbsp; &nbsp; <span class="co1">// and sends it to the brain for processing.</span><br />
+&nbsp; &nbsp; <span class="kw1">try</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; MyBrain.<span class="me1">dataInput</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aioexception+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">IOException</span></a> e<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; e.<span class="me1">printStackTrace</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; <span class="co1">// How a relative coordinate is stored in my HashMap</span><br />
+&nbsp; <span class="kw1">class</span> Cell <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> food<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> x<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> y<span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> f, g, h<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> Cell parent<span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; <span class="kw1">public</span> Cell<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> x, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> y, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> food<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">food</span> <span class="sy0">=</span> food<span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">x</span> <span class="sy0">=</span> x<span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">=</span> y<span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">f</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">g</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">h</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">parent</span> <span class="sy0">=</span> <span class="kw2">null</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">int</span> hashCode<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> s <span class="sy0">=</span> x <span class="sy0">+</span> <span class="st0">&quot;,,,&quot;</span> <span class="sy0">+</span> y<span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> s.<span class="me1">hashCode</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> key<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> k <span class="sy0">=</span> x <span class="sy0">+</span> <span class="st0">&quot;,&quot;</span> <span class="sy0">+</span> y<span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> k<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; <span class="kw1">class</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Amap+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Map</span></a> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> antHill<span class="sy0">;</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ahashset+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">HashSet</span></a> food<span class="sy0">;</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ahashset+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">HashSet</span></a> frontier<span class="sy0">;</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ahashmap+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">HashMap</span></a> mapIndex<span class="sy0">;</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> x,y<span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Amap+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Map</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">x</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">antHill</span> <span class="sy0">=</span> xyToS<span class="br0">&#40;</span><span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">mapIndex</span> <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ahashmap+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">HashMap</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">mapIndex</span>.<span class="me1">put</span><span class="br0">&#40;</span>antHill, <span class="kw1">new</span> Cell<span class="br0">&#40;</span><span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">food</span> <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ahashset+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">HashSet</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">frontier</span> <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ahashset+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">HashSet</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Gives a key for the current coordinates, offset by supplied xOff and yOff</span><br />
+&nbsp; &nbsp; <span class="co1">// Offset of 0,0 would give the current coordinate's key</span><br />
+&nbsp; &nbsp; <span class="kw1">private</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> xyToS<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> xOff, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> yOff<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>x<span class="sy0">+</span>xOff<span class="br0">&#41;</span> <span class="sy0">+</span> <span class="st0">&quot;,&quot;</span> <span class="sy0">+</span> <span class="br0">&#40;</span>y<span class="sy0">+</span>yOff<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Updates or creates a cell in our Ant's HashMap</span><br />
+&nbsp; &nbsp; <span class="kw1">private</span> <span class="kw4">void</span> updateSurrounding<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> key, Tile t, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> xx, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> yy<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>mapIndex.<span class="me1">get</span><span class="br0">&#40;</span>key<span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="kw2">null</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Update the HashMap's cell</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; Cell c <span class="sy0">=</span> mapIndex.<span class="me1">remove</span><span class="br0">&#40;</span>key<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; c.<span class="me1">food</span> <span class="sy0">=</span> t.<span class="me1">getAmountOfFood</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>c.<span class="me1">food</span> <span class="sy0">&amp;</span>lt<span class="sy0">;=</span> <span class="nu0">0</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; food.<span class="me1">remove</span><span class="br0">&#40;</span>key<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; mapIndex.<span class="me1">put</span><span class="br0">&#40;</span>key, c<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Create a new cell for the hashmap</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>t.<span class="me1">isTravelable</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cell c <span class="sy0">=</span> <span class="kw1">new</span> Cell<span class="br0">&#40;</span>xx, yy, t.<span class="me1">getAmountOfFood</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mapIndex.<span class="me1">put</span><span class="br0">&#40;</span>key, c<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; frontier.<span class="me1">add</span><span class="br0">&#40;</span>key<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>c.<span class="me1">food</span> <span class="sy0">&amp;</span>gt<span class="sy0">;</span> <span class="nu0">0</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; food.<span class="me1">add</span><span class="br0">&#40;</span>key<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Takes as input all NEWS tiles and then adds them to your ant's internal map</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">void</span> setSurroundings<span class="br0">&#40;</span>Tile N, Tile E, Tile W, Tile S<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="co1">// NEWS Updates</span><br />
+&nbsp; &nbsp; &nbsp; updateSurrounding<span class="br0">&#40;</span>xyToS<span class="br0">&#40;</span><span class="nu0">0</span>, <span class="nu0">1</span><span class="br0">&#41;</span>, N, x, y<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; updateSurrounding<span class="br0">&#40;</span>xyToS<span class="br0">&#40;</span><span class="nu0">1</span>, <span class="nu0">0</span><span class="br0">&#41;</span>, E, x<span class="sy0">+</span><span class="nu0">1</span>, y<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; updateSurrounding<span class="br0">&#40;</span>xyToS<span class="br0">&#40;</span><span class="sy0">-</span><span class="nu0">1</span>, <span class="nu0">0</span><span class="br0">&#41;</span>, W, x<span class="sy0">-</span><span class="nu0">1</span>, y<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; updateSurrounding<span class="br0">&#40;</span>xyToS<span class="br0">&#40;</span><span class="nu0">0</span>, <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span>, S, x, y<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Takes as input the current cell's food count and updates the ant's map</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">void</span> setCurrent<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> food<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; Cell c <span class="sy0">=</span> getCurrent<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>food <span class="sy0">&amp;</span>lt<span class="sy0">;=</span> <span class="nu0">0</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">food</span>.<span class="me1">remove</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; c.<span class="me1">food</span> <span class="sy0">=</span> food<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Returns true if we are standing on food</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aboolean+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Boolean</span></a> foodHere<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> mapIndex.<span class="me1">get</span><span class="br0">&#40;</span>xyToS<span class="br0">&#40;</span><span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">food</span> <span class="sy0">&amp;</span>gt<span class="sy0">;</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Returns true if we are standing on the anthill</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aboolean+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Boolean</span></a> homeHere<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> antHill.<span class="me1">equals</span><span class="br0">&#40;</span>xyToS<span class="br0">&#40;</span><span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Gets the nearest cell from a HashSet of cells</span><br />
+&nbsp; &nbsp; <span class="kw1">private</span> Cell closestTarget<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ahashset+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">HashSet</span></a> m<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; Cell best <span class="sy0">=</span> <span class="kw2">null</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> distance <span class="sy0">=</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a>.<span class="me1">MAX_VALUE</span><span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>m.<span class="me1">isEmpty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; Cell cur <span class="sy0">=</span> getCurrent<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> key <span class="sy0">:</span> m<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>estimateDistance<span class="br0">&#40;</span>cur, mapIndex.<span class="me1">get</span><span class="br0">&#40;</span>key<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy0">&amp;</span>lt<span class="sy0">;</span> distance<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; best <span class="sy0">=</span> mapIndex.<span class="me1">get</span><span class="br0">&#40;</span>key<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; distance <span class="sy0">=</span> estimateDistance<span class="br0">&#40;</span>cur, best<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> best<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Returns the cell our ant should move towards.</span><br />
+&nbsp; &nbsp; <span class="co1">// Goes to the closest food source, unless an undiscovered cell is less than half</span><br />
+&nbsp; &nbsp; <span class="co1">// the distance.</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> Cell getBestTarget<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="co1">// Find closest food and frontier cells</span><br />
+&nbsp; &nbsp; &nbsp; Cell bestFoodCell <span class="sy0">=</span> closestTarget<span class="br0">&#40;</span>food<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; Cell bestFrontierCell <span class="sy0">=</span> closestTarget<span class="br0">&#40;</span>frontier<span class="br0">&#41;</span><span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>estimateDistance<span class="br0">&#40;</span>getCurrent<span class="br0">&#40;</span><span class="br0">&#41;</span>, bestFrontierCell<span class="br0">&#41;</span><span class="sy0">*</span><span class="nu0">2</span> <span class="sy0">&amp;</span>lt<span class="sy0">;=</span> estimateDistance<span class="br0">&#40;</span>getCurrent<span class="br0">&#40;</span><span class="br0">&#41;</span>, bestFoodCell<span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> bestFrontierCell<span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">else</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> bestFoodCell<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Returns the current Cell we are standing on</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> Cell getCurrent<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> mapIndex.<span class="me1">get</span><span class="br0">&#40;</span>xyToS<span class="br0">&#40;</span><span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Returns the anthill cell</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> Cell getHome<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> mapIndex.<span class="me1">get</span><span class="br0">&#40;</span>antHill<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Based on a neighboring coordinate destination, this returns which direction we need</span><br />
+&nbsp; &nbsp; <span class="co1">// to move to get there.</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> Direction move<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> key<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> k <span class="sy0">=</span> key.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">&quot;,&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> kx <span class="sy0">=</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a>.<span class="me1">parseInt</span><span class="br0">&#40;</span>k<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> ky <span class="sy0">=</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a>.<span class="me1">parseInt</span><span class="br0">&#40;</span>k<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; frontier.<span class="me1">remove</span><span class="br0">&#40;</span>key<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>y<span class="sy0">+</span><span class="nu0">1</span> <span class="sy0">==</span> ky<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">+=</span> <span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> Direction.<span class="me1">NORTH</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>x<span class="sy0">+</span><span class="nu0">1</span> <span class="sy0">==</span> kx<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">x</span> <span class="sy0">+=</span> <span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> Direction.<span class="me1">EAST</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>x<span class="sy0">-</span><span class="nu0">1</span> <span class="sy0">==</span> kx<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">x</span> <span class="sy0">-=</span> <span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> Direction.<span class="me1">WEST</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">else</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">-=</span> <span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> Direction.<span class="me1">SOUTH</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Returns an ArrayList of all known neighboring cells</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aarraylist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">ArrayList</span></a> getNeighbors<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> key<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> k <span class="sy0">=</span> key.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">&quot;,&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> x <span class="sy0">=</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a>.<span class="me1">parseInt</span><span class="br0">&#40;</span>k<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> y <span class="sy0">=</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a>.<span class="me1">parseInt</span><span class="br0">&#40;</span>k<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aarraylist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">ArrayList</span></a> ret <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aarraylist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">ArrayList</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>mapIndex.<span class="me1">get</span><span class="br0">&#40;</span>x<span class="sy0">+</span><span class="st0">&quot;,&quot;</span><span class="sy0">+</span><span class="br0">&#40;</span>y<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="kw2">null</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; ret.<span class="me1">add</span><span class="br0">&#40;</span>mapIndex.<span class="me1">get</span><span class="br0">&#40;</span>x<span class="sy0">+</span><span class="st0">&quot;,&quot;</span><span class="sy0">+</span><span class="br0">&#40;</span>y<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>mapIndex.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#40;</span>x<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;,&quot;</span><span class="sy0">+</span>y<span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="kw2">null</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; ret.<span class="me1">add</span><span class="br0">&#40;</span>mapIndex.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#40;</span>x<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;,&quot;</span><span class="sy0">+</span>y<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>mapIndex.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#40;</span>x<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;,&quot;</span><span class="sy0">+</span>y<span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="kw2">null</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; ret.<span class="me1">add</span><span class="br0">&#40;</span>mapIndex.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#40;</span>x<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;,&quot;</span><span class="sy0">+</span>y<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>mapIndex.<span class="me1">get</span><span class="br0">&#40;</span>x<span class="sy0">+</span><span class="st0">&quot;,&quot;</span><span class="sy0">+</span><span class="br0">&#40;</span>y<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="kw2">null</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; ret.<span class="me1">add</span><span class="br0">&#40;</span>mapIndex.<span class="me1">get</span><span class="br0">&#40;</span>x<span class="sy0">+</span><span class="st0">&quot;,&quot;</span><span class="sy0">+</span><span class="br0">&#40;</span>y<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> ret<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> estimateDistance<span class="br0">&#40;</span>Cell cell1, Cell cell2<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>cell1 <span class="sy0">==</span> <span class="kw2">null</span> <span class="sy0">||</span> cell2 <span class="sy0">==</span> <span class="kw2">null</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a>.<span class="me1">MAX_VALUE</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Amath+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Math</span></a>.<span class="me1">abs</span><span class="br0">&#40;</span>cell1.<span class="me1">x</span> <span class="sy0">-</span> cell2.<span class="me1">x</span><span class="br0">&#41;</span> <span class="sy0">+</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Amath+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Math</span></a>.<span class="me1">abs</span><span class="br0">&#40;</span>cell1.<span class="me1">y</span> <span class="sy0">-</span> cell2.<span class="me1">y</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Updates a cell's food if it's less than what is already in our map</span><br />
+&nbsp; &nbsp; <span class="kw1">private</span> <span class="kw4">void</span> updateCell<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> key, <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> food<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; Cell c <span class="sy0">=</span> mapIndex.<span class="me1">get</span><span class="br0">&#40;</span>key<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; c.<span class="me1">food</span> <span class="sy0">=</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Amath+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Math</span></a>.<span class="me1">min</span><span class="br0">&#40;</span>food, c.<span class="me1">food</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; mapIndex.<span class="me1">put</span><span class="br0">&#40;</span>key, c<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Merge list of Integers into our ant's map</span><br />
+&nbsp; &nbsp; <span class="co1">// List: x, y, food, frontier? ... and so on</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">void</span> mergeQuads<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aarraylist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">ArrayList</span></a> quads<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aiterator+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Iterator</span></a> itr <span class="sy0">=</span> quads.<span class="me1">iterator</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">while</span><span class="br0">&#40;</span>itr.<span class="me1">hasNext</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> x <span class="sy0">=</span> itr.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> y <span class="sy0">=</span> itr.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> food <span class="sy0">=</span> itr.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aboolean+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Boolean</span></a> frontier <span class="sy0">=</span> <span class="br0">&#40;</span><span class="nu0">1</span> <span class="sy0">==</span> itr.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> k <span class="sy0">=</span> x<span class="sy0">+</span><span class="st0">&quot;,&quot;</span><span class="sy0">+</span>y<span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// If we already have the cell, update it.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Otherwise add a new cell and put it in the appropriate frontier or food list</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span><span class="br0">&#40;</span>mapIndex.<span class="me1">containsKey</span><span class="br0">&#40;</span>k<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; updateCell<span class="br0">&#40;</span>k, food<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>food <span class="sy0">&amp;</span>lt<span class="sy0">;=</span> <span class="nu0">0</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">food</span>.<span class="me1">remove</span><span class="br0">&#40;</span>k<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mapIndex.<span class="me1">put</span><span class="br0">&#40;</span>k, <span class="kw1">new</span> Cell<span class="br0">&#40;</span>x, y, food<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>food <span class="sy0">&amp;</span>gt<span class="sy0">;</span> <span class="nu0">0</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">food</span>.<span class="me1">add</span><span class="br0">&#40;</span>k<span class="br0">&#41;</span><span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>frontier<span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">frontier</span>.<span class="me1">add</span><span class="br0">&#40;</span>k<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; <span class="kw1">enum</span> STATE <span class="br0">&#123;</span> Exploring, GoingHome <span class="br0">&#125;</span><br />
+<br />
+&nbsp; <span class="kw1">class</span> Brain <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Amap+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Map</span></a> map<span class="sy0">;</span><br />
+&nbsp; &nbsp; STATE state<span class="sy0">;</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Alinkedlist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">LinkedList</span></a> route<span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; <span class="kw1">public</span> Brain<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; map <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Amap+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Map</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; state <span class="sy0">=</span> STATE.<span class="me1">Exploring</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; route <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Alinkedlist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">LinkedList</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Takes a byte[] that's composed of an ArrayList and</span><br />
+&nbsp; &nbsp; <span class="co1">// inputs it into our ant's brain.</span><br />
+&nbsp; &nbsp; <span class="co1">// Integer Format: x, y, food, frontier? ... and so on</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">void</span> dataInput<span class="br0">&#40;</span><span class="kw4">byte</span><span class="br0">&#91;</span><span class="br0">&#93;</span> in<span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aioexception+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">IOException</span></a> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Abytearrayinputstream+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">ByteArrayInputStream</span></a> bais <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Abytearrayinputstream+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">ByteArrayInputStream</span></a><span class="br0">&#40;</span>in<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adatainputstream+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">DataInputStream</span></a> inp <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adatainputstream+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">DataInputStream</span></a><span class="br0">&#40;</span>bais<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aarraylist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">ArrayList</span></a> quads <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aarraylist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">ArrayList</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">while</span> <span class="br0">&#40;</span>inp.<span class="me1">available</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&amp;</span>gt<span class="sy0">;</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> element <span class="sy0">=</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a>.<span class="me1">parseInt</span><span class="br0">&#40;</span>inp.<span class="me1">readUTF</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; quads.<span class="me1">add</span><span class="br0">&#40;</span>element<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; map.<span class="me1">mergeQuads</span><span class="br0">&#40;</span>quads<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Outputs an ArrayList as a byte[] to send</span><br />
+&nbsp; &nbsp; <span class="co1">// to another ant.</span><br />
+&nbsp; &nbsp; <span class="co1">// Format: x, y, food, frontier? ... and so on</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">byte</span><span class="br0">&#91;</span><span class="br0">&#93;</span> dataOutput<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw1">throws</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aioexception+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">IOException</span></a> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aarraylist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">ArrayList</span></a> quads <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aarraylist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">ArrayList</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span>Cell c <span class="sy0">:</span> map.<span class="me1">mapIndex</span>.<span class="me1">values</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; quads.<span class="me1">add</span><span class="br0">&#40;</span>c.<span class="me1">x</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; quads.<span class="me1">add</span><span class="br0">&#40;</span>c.<span class="me1">y</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; quads.<span class="me1">add</span><span class="br0">&#40;</span>c.<span class="me1">food</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span><span class="br0">&#40;</span>map.<span class="me1">frontier</span>.<span class="me1">contains</span><span class="br0">&#40;</span>c.<span class="me1">key</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; quads.<span class="me1">add</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">else</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; quads.<span class="me1">add</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="co1">// write to byte array</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Abytearrayoutputstream+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">ByteArrayOutputStream</span></a> baos <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Abytearrayoutputstream+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">ByteArrayOutputStream</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adataoutputstream+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">DataOutputStream</span></a> out <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adataoutputstream+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">DataOutputStream</span></a><span class="br0">&#40;</span>baos<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> element <span class="sy0">:</span> quads<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; out.<span class="me1">writeUTF</span><span class="br0">&#40;</span>element.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw4">byte</span><span class="br0">&#91;</span><span class="br0">&#93;</span> bytes <span class="sy0">=</span> baos.<span class="me1">toByteArray</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> bytes<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Load the current tile's data into our brain</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">void</span> loadCurrent<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> food<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; map.<span class="me1">setCurrent</span><span class="br0">&#40;</span>food<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Load our neighboring tile's data into our brain</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">void</span> loadSurroundings<span class="br0">&#40;</span>Tile N, Tile E, Tile W, Tile S<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="co1">// load into map</span><br />
+&nbsp; &nbsp; &nbsp; map.<span class="me1">setSurroundings</span><span class="br0">&#40;</span>N, E, W, S<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Main Strategy Center</span><br />
+&nbsp; &nbsp; <span class="co1">// 2 States - Exploration and GoingHome</span><br />
+&nbsp; &nbsp; <span class="co1">// If an ant is GoingHome, it means the ant has collected food to drop off.</span><br />
+&nbsp; &nbsp; <span class="co1">// After dropping off, the ant's state is set to Exploring.</span><br />
+&nbsp; &nbsp; <span class="co1">// When exploring, the ant moves towards known food sources or undiscovered areas</span><br />
+&nbsp; &nbsp; <span class="co1">// (going towards food if its less than twice as far as the nearest undiscovered area).</span><br />
+&nbsp; &nbsp; <span class="co1">// If it finds food on the way, it picks it up and head's home otherwise it gets to its destination,</span><br />
+&nbsp; &nbsp; <span class="co1">// picking up food if it's still there or else it finds a new best destination.</span><br />
+&nbsp; &nbsp; <span class="co1">//</span><br />
+&nbsp; &nbsp; <span class="co1">// Routes are created with the A* algorithm</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aaction+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Action</span></a> getAction<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>state <span class="sy0">==</span> STATE.<span class="me1">GoingHome</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>route.<span class="me1">isEmpty</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&amp;</span>amp<span class="sy0">;&amp;</span>amp<span class="sy0">;</span> <span class="sy0">!</span>map.<span class="me1">homeHere</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; route <span class="sy0">=</span> aStar<span class="br0">&#40;</span>map.<span class="me1">getCurrent</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, map.<span class="me1">getHome</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// 1. Drop off food if we're home</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// 2. Otherwise continue heading home</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>map.<span class="me1">homeHere</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; state <span class="sy0">=</span> STATE.<span class="me1">Exploring</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aaction+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Action</span></a>.<span class="me1">DROP_OFF</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Follow route home</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aaction+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Action</span></a>.<span class="me1">move</span><span class="br0">&#40;</span>map.<span class="me1">move</span><span class="br0">&#40;</span>route.<span class="me1">removeLast</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>state <span class="sy0">==</span> STATE.<span class="me1">Exploring</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// 1. Pickup food if possible</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// 2. Explore with food target taking precedence over exploring</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>map.<span class="me1">foodHere</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&amp;</span>amp<span class="sy0">;&amp;</span>amp<span class="sy0">;</span> <span class="sy0">!</span>map.<span class="me1">homeHere</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Pick up, set state to picking up (save prev val)</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; route.<span class="me1">clear</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; state <span class="sy0">=</span> STATE.<span class="me1">GoingHome</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aaction+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Action</span></a>.<span class="me1">GATHER</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// frontier/food explore</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>route.<span class="me1">isEmpty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; route <span class="sy0">=</span> aStar<span class="br0">&#40;</span>map.<span class="me1">getCurrent</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, map.<span class="me1">getBestTarget</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aaction+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Action</span></a>.<span class="me1">move</span><span class="br0">&#40;</span>map.<span class="me1">move</span><span class="br0">&#40;</span>route.<span class="me1">removeLast</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aaction+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Action</span></a>.<span class="me1">move</span><span class="br0">&#40;</span>Direction.<span class="me1">SOUTH</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="co1">// Returns a LinkedList with the key of the next tile to move to</span><br />
+&nbsp; &nbsp; <span class="co1">// at the end of the list.</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Alinkedlist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">LinkedList</span></a> aStar<span class="br0">&#40;</span>Cell start, Cell goal<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aset+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Set</span></a> open <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ahashset+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">HashSet</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aset+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Set</span></a> closed <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ahashset+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">HashSet</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; start.<span class="me1">g</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; start.<span class="me1">h</span> <span class="sy0">=</span> estimateDistance<span class="br0">&#40;</span>start, goal<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; start.<span class="me1">f</span> <span class="sy0">=</span> start.<span class="me1">h</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; open.<span class="me1">add</span><span class="br0">&#40;</span>start<span class="br0">&#41;</span><span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">while</span> <span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; Cell current <span class="sy0">=</span> <span class="kw2">null</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>open.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">==</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">throw</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aruntimeexception+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">RuntimeException</span></a><span class="br0">&#40;</span><span class="st0">&quot;no route&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span>Cell cell <span class="sy0">:</span> open<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>current <span class="sy0">==</span> <span class="kw2">null</span> <span class="sy0">||</span> cell.<span class="me1">f</span> <span class="sy0">&amp;</span>lt<span class="sy0">;</span> cell.<span class="me1">f</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; current <span class="sy0">=</span> cell<span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>current <span class="sy0">==</span> goal<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">break</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; open.<span class="me1">remove</span><span class="br0">&#40;</span>current<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; closed.<span class="me1">add</span><span class="br0">&#40;</span>current<span class="br0">&#41;</span><span class="sy0">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span>Cell neighbor <span class="sy0">:</span> map.<span class="me1">getNeighbors</span><span class="br0">&#40;</span>current.<span class="me1">key</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>neighbor <span class="sy0">!=</span> <span class="kw2">null</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">int</span> nextG <span class="sy0">=</span> current.<span class="me1">g</span> <span class="sy0">+</span> <span class="nu0">1</span><span class="sy0">;</span>&nbsp; <span class="co1">// flat neighbor cost of 1</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>nextG <span class="sy0">&amp;</span>lt<span class="sy0">;</span> neighbor.<span class="me1">g</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; open.<span class="me1">remove</span><span class="br0">&#40;</span>neighbor<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; closed.<span class="me1">remove</span><span class="br0">&#40;</span>neighbor<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>open.<span class="me1">contains</span><span class="br0">&#40;</span>neighbor<span class="br0">&#41;</span> <span class="sy0">&amp;</span>amp<span class="sy0">;&amp;</span>amp<span class="sy0">;</span> <span class="sy0">!</span>closed.<span class="me1">contains</span><span class="br0">&#40;</span>neighbor<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; neighbor.<span class="me1">g</span> <span class="sy0">=</span> nextG<span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; neighbor.<span class="me1">h</span> <span class="sy0">=</span> estimateDistance<span class="br0">&#40;</span>neighbor, goal<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; neighbor.<span class="me1">f</span> <span class="sy0">=</span> neighbor.<span class="me1">g</span> <span class="sy0">+</span> neighbor.<span class="me1">h</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; neighbor.<span class="me1">parent</span> <span class="sy0">=</span> current<span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; open.<span class="me1">add</span><span class="br0">&#40;</span>neighbor<span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="co1">// Finding my way back</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Alinkedlist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">LinkedList</span></a> route <span class="sy0">=</span> <span class="kw1">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Alinkedlist+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">LinkedList</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; Cell current <span class="sy0">=</span> goal<span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">while</span> <span class="br0">&#40;</span>current.<span class="me1">parent</span> <span class="sy0">!=</span> <span class="kw2">null</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; route.<span class="me1">add</span><span class="br0">&#40;</span>current.<span class="me1">key</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; Cell t <span class="sy0">=</span> current.<span class="me1">parent</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; current.<span class="me1">parent</span> <span class="sy0">=</span> <span class="kw2">null</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; current <span class="sy0">=</span> t<span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> route<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<br />
+&nbsp; &nbsp; <span class="kw1">public</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a> estimateDistance<span class="br0">&#40;</span>Cell cell1, Cell cell2<span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>cell1 <span class="sy0">==</span> <span class="kw2">null</span> <span class="sy0">||</span> cell2 <span class="sy0">==</span> <span class="kw2">null</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Ainteger+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Integer</span></a>.<span class="me1">MAX_VALUE</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Amath+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Math</span></a>.<span class="me1">abs</span><span class="br0">&#40;</span>cell1.<span class="me1">x</span> <span class="sy0">-</span> cell2.<span class="me1">x</span><span class="br0">&#41;</span> <span class="sy0">+</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Amath+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Math</span></a>.<span class="me1">abs</span><span class="br0">&#40;</span>cell1.<span class="me1">y</span> <span class="sy0">-</span> cell2.<span class="me1">y</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+<span class="br0">&#125;</span></div></td></tr></tbody></table></div>
+</pre><h3>The Future</h3>
+            <p>Future posts will include my experiences with Microsoft’s Kinect for Windows SDK, programming Koans for learning languages, and my newest project titled Blob-Bomb.
+            </p>
+            <p><strong>Key Features:</strong>
+            </p>
+            <ul class="bullets blue">
+              <li>Live head-2-head multiplayer
+              </li>
+              <li>Procedurally generated levels
+              </li>
+              <li>Angry Birds style gameplay
+              </li>
+              <li>Android, iOS compatible
+              </li>
+            </ul>
+            <p>
+              <img src="../../../../../cdn.philipbjorge.com/wp-content/uploads/blob-bomb-title.jpg" alt="" />
+            </p>					 			
+        </div>	 
+  </body>
+</html>	 
+<!-- Dynamic page generated in 0.748 seconds. --> 
+<!-- Cached page generated by WP-Super-Cache on 2012-06-02 09:05:41 --> 
+<!-- super cache -->

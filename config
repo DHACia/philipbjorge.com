@@ -1,0 +1,4 @@
+# wok configuration for philipbjorge.com
+site_title: Philip Bjorge
+url_include_index: False
+url_pattern: /{category}/{date}/{slug}/index.html
