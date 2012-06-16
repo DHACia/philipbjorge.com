@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="/css/galleria/classic/galleria.classic.css">
 <script src="/js/galleria-1.2.7.min.js"></script>
 <script src="/css/galleria/classic/galleria.classic.min.js"></script>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4fdb9e2c6f35426e"></script>
 <script type="text/javascript">
 $().ready(function() {
 	Galleria.configure({
@@ -23,7 +25,18 @@ $().ready(function() {
 		{% endfor %}
 		</div>
 	{% endif %}
+	<div id="content">
     {{ page.content }}
+	</div>
+	<div id="share_buttons" class="addthis_toolbox addthis_default_style addthis_32x32_style print_hide">
+	<a class="addthis_button_facebook_like" fb:like:layout="box_count"></a>
+	<a class="addthis_button_tweet" tw:count="vertical"></a>
+	<a class="addthis_button_google_plusone" g:plusone:size="tall"></a>
+	{% if page.title_img_src %}
+	<a class="addthis_button_pinterest_pinit" pi:pinit:media="{{ page.title_img_src|replace('{img_width}', '640') }}" pi:pinit:description="{{ page.snippet }}" pi:pinit:layout="vertical"></a>
+	{% endif %}
+	<a class="addthis_counter"></a>
+	</div>
 {% endblock %}
 
 {% block right_col %}

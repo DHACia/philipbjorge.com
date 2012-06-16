@@ -1,0 +1,55 @@
+body, input, textarea {
+  color: #666666;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-family: "PT Sans", "lucida grande", tahoma, sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Arvo", "lucida grande", tahoma, sans-serif;
+  font-weight: 600;
+  line-height: 1.5em;
+  margin: 0;
+  color: #CCC;
+  -webkit-font-smoothing: antialiased;
+}
+
+hr {
+  background-color: #cccccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.625em;
+}
+
+p {
+  margin: 0 0 1.25em 0;
+}
+
+ul, ol {
+  margin: 0 0 1.25em 0;
+}
+
+a {
+  color: #4095DF;
+  text-decoration: none;
+  -webkit-transition: all .5s ease-in-out;  
+  -moz-transition: all .5s ease-in-out;  
+  -o-transition: all .5s ease-in-out;  
+  transition: all .5s ease-in-out; 
+  -ms-transition: all .5s ease-in-out; 
+}
+
+/* =Clearfix
+ *----------------------------------------------- */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.wufoo .info{display:none}

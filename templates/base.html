@@ -13,6 +13,7 @@
   <link href="favicon.ico" rel="icon">
   <link href='http://fonts.googleapis.com/css?family=Arvo|PT+Sans' rel='stylesheet' type='text/css'>
   <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/print.css" type="text/css" media="print" />
   <link href="/css/style-my-tooltips.css" rel="stylesheet" type="text/css" />
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
@@ -22,6 +23,12 @@
   {% endblock %}
   <script>
     $().ready(function() {
+      $(".gsc-clear-button").live('click', function() {
+		$("#search-panel").removeClass("visible");
+	  });
+	  $("#close-search-panel").live('click', function() {
+		$(".gsc-clear-button").click();
+	  });
 	  if ($("time").length)
 		$("time").timeago();
       $("[title]").style_my_tooltips({
@@ -32,7 +39,7 @@
   </script>
 </head>
 <body>
-  <div class="headerColumn">
+  <div class="headerColumn print_hide">
     <header role="banner"><hgroup>
       <h1>
         <a href="http://www.philipbjorge.com/">
@@ -50,6 +57,23 @@
           <li><a href="/contact/" class="emailLink">Contact Me!</a></li>
         </ul>
     </nav>
+	
+	<div id="cse-search-form" style="width: 100%;">Loading</div>
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript"> 
+	  google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST});
+	  google.setOnLoadCallback(function() {
+		var customSearchOptions = {};  var customSearchControl = new google.search.CustomSearchControl(
+		  '000017088595631691019:zqtswshnvca', customSearchOptions);
+		customSearchControl.setResultSetSize(google.search.Search.SMALL_RESULTSET);
+		customSearchControl.setSearchCompleteCallback(this, function() {
+		    $("#search-panel").addClass("visible");
+		});
+		var options = new google.search.DrawOptions();
+		options.setSearchFormRoot('cse-search-form');
+		customSearchControl.draw('cse', options);
+	  }, true);
+	</script>
 
     <footer role="social">
         <h2>My Social</h2>
@@ -68,6 +92,10 @@
 
   <div class="mainColumn">
     <div class="blog-index height_hack">
+	  <div id="search-panel">
+		<span id="close-search-panel"><a href="javascript:void(0)">Close Search Results</a><img src="/images/close.png" /></span>
+	    <div id="cse"></div>
+	  </div>
 	  {% block content %}
 	  {% endblock %}
 	</div>
