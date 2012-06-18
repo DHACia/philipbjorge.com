@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteBase /
+RewriteRule ^([0-9]+)/([0-9]+)/([0-9]+)/(.*)$ http://www.philipbjorge.com/blog/$1-$2-$3/$4 [R=301,L]
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]

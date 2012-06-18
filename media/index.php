@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{{ site.title }}{% if page.title %} - {% endif %}{{ page.title }}</title>
+  <title>Philip Bjorge</title>
   <meta name="author" content="Philip Bjorge">
   <meta name="description" content="{{ page.excerpt }}">
   <meta name="HandheldFriendly" content="True">
@@ -15,12 +15,14 @@
   <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/print.css" type="text/css" media="print" />
   <link href="/css/style-my-tooltips.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="/css/isotope.css">
+  <link rel="stylesheet" type="text/css" href="/css/networks.css">
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   <script src="/js/jquery.timeago.js" type="text/javascript"></script>
+  <script src="/js/jquery.isotope.min.js"></script>
+  <script src="/js/jquery.infinitescroll.min.js"></script>
   <script src="/js/jquery.style-my-tooltips.js" type="text/javascript"></script>
-  {% block js %}
-  {% endblock %}
   <script>
     $().ready(function() {
       $(".gsc-clear-button").live('click', function() {
@@ -31,10 +33,60 @@
 	  });
 	  if ($("time").length)
 		$("time").timeago();
-      $("[title]").style_my_tooltips({
+      $("[title]:not(.social-item)").style_my_tooltips({
         tip_follows_cursor: "off", //on/off
         tip_delay_time: 750 //milliseconds
       });
+    });
+	$(window).load(function(){
+      var $container = $('#social-container');
+    
+      $container.isotope({
+        itemSelector : '.social-item',
+		animationEngine : 'best-available',
+        animationOptions : {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        },
+		getSortData: {
+			time: function( $elem ) {
+				return $elem.find('time').attr('datetime');
+			}
+		},
+		sortBy: 'time',
+		sortAscending: false
+      });
+	  
+	  $("#new-content").load('update_stream.php', function() {
+		$container.isotope('insert', $(this).children('.social-item'));
+		$("time").timeago();
+	  });
+	  
+	  if ($("time").length)
+		$("time").timeago();
+      
+      $container.infinitescroll({
+        navSelector  : '#social-nav',    // selector for the paged navigation 
+        nextSelector : '#social-nav a',  // selector for the NEXT link (to page 2)
+        itemSelector : '.social-item',     // selector for all items you'll retrieve
+		bufferPx : 200,
+		debug: true,
+        loading: {
+            finishedMsg: 'No more pages to load.',
+            img: 'images/loader.gif'
+          }
+        },
+        // call Isotope as a callback
+        function( newElements ) {
+			var $newElems = $(newElements);
+			$newElems.imagesLoaded(function(){
+				$container.isotope('appended', $newElems );
+				$("time").timeago();
+			});
+        }
+      );
+	  
     });
   </script>
 </head>
@@ -93,15 +145,16 @@
 
   <div class="mainColumn">
     <div class="blog-index height_hack">
+	  <h1>My Social Wall <a href="https://github.com/philipbjorge/Infinite-Social-Wall">(on github)</a></h1>
 	  <div id="search-panel">
 		<span id="close-search-panel"><a href="javascript:void(0)">Close Search Results</a><img src="/images/close.png" /></span>
 	    <div id="cse"></div>
 	  </div>
-	  {% block content %}
-	  {% endblock %}
+	  <div id="social-container" class="variable-sizes clearfix infinite-scrolling">
+		<?php require_once('get_stream.php'); ?>
+	  </div>
+	  <div id="new-content"></div>
 	</div>
-	{% block right_col %}
-	{% endblock %}
   </div>
   <script src="/js/app.js" type="text/javascript"></script>
 </body>
