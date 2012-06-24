@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /get_stream.php
+Disallow: /cgi-bin/
+Disallow: /update_stream.php

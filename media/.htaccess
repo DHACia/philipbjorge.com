@@ -43,6 +43,7 @@
  <IfModule mod_expires.c>
  	# Turn on Expires
  	ExpiresActive On
+	
  	# set default to "access plus 1 year"
  	ExpiresDefault A31536000
  	# html - "modification plus 1 hour"
@@ -51,6 +52,8 @@
  	ExpiresByType text/css M3628800
  	ExpiresByType text/javascript M3628800
  	ExpiresByType application/x-javascript M3628800
+	# RSS feed
+	ExpiresByType application/rss+xml "access plus 1 hour"
  </IfModule>
  # No cache for php-files
  <FilesMatch "\.(php)$">

@@ -16,7 +16,7 @@
                     <pubDate>{{ item.datetime.strftime(datefmt) }}</pubDate>
                     <description>
 						{% if item.title_img_src %}
-							{{ '<img src="'|e }}{{ item.title_img_src|replace('{img_width}', '225')|e }}{{'" class="title_img" title="'|e }}{{ item.title|e }}{{'" />'|e }}
+							{{ '<a href="'|e }}{{ site.base_url|e }}{{ item.url|e }}{{ '">'|e }}{{ '<img src="'|e }}{{ item.title_img_src|replace('{img_width}', '225')|e }}{{'" class="title_img" title="'|e }}{{ item.title|e }}{{'" /></a>'|e }}
 						{% endif %}
                         {{ item.snippet|e }}
                     </description>
