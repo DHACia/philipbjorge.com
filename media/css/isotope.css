@@ -8,6 +8,13 @@
   top: 20px;
 }
 
+#social-container blockquote {
+  margin: 0.5em;
+}
+#social-container ul, #social-container ol {
+  padding-left: 20px;
+}
+
 @media only screen and (max-width: 600px) {
 .mainColumn .blog-index {
   width: 100%;
