@@ -387,6 +387,13 @@ header {
 }
 #galleria{height:540px; margin-bottom: 1em;}
 
+#blog-entry {
+  font-size: 1.25em;
+}
+#blog-entry p {
+  margin-top: 1em;
+}
+
 #blog-entry img {
   max-width: 100%;
 }

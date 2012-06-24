@@ -1,11 +1,30 @@
+.mainColumn .blog-index {
+  width: 85%;
+  margin-right: 3%;
+}
 #social-container {
   width: 90%;
   left: 5%;
   top: 20px;
 }
 
-.social-item {
+@media only screen and (max-width: 600px) {
+.mainColumn .blog-index {
   width: 100%;
+  margin-right: 0%;
+}
+#social-container {
+  width: 100%;
+  left: 0%;
+  top: 20px;
+}
+.mainColumn .page, .mainColumn .blog-index, .mainColumn .postColumn, .mainColumn .commentsColumn {
+  padding: 3px;
+}
+}
+
+.social-item {
+  min-width: 150px;
   max-width: 300px;
   margin: 5px;
   border: 1px solid #666;
