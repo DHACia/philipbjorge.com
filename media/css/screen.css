@@ -354,6 +354,33 @@ header {
   margin-top: 1em;
 }
 
+/* Search box hack */
+div#cse-search-form {
+  margin-bottom: 20px;
+}
+table.gsc-search-box {
+  position: relative;
+}
+table.gsc-search-box td {
+  vertical-align: top;
+}
+table.gsc-search-box tr {
+  height: 40px;
+}
+
+table.gsc-search-box td:nth-last-child(2) {
+  padding-top: 40px;
+  width: 50px;
+  position: absolute;
+  left: 0;
+}
+
+table.gsc-search-box td:last-child {
+  padding-top: 40px;
+  position: absolute;
+  left: 60px;
+}
+
 /* RIGHT column */
 /* comments */
 #disqus_thread {
