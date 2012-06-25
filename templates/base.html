@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>{{ site.title }}{% if page.title %} - {% endif %}{{ page.title }}</title>
   <meta name="author" content="Philip Bjorge">
-  <meta name="description" content="{{ page.excerpt }}">
+  <meta name="description" content="{% if page.snippet %}{{ page.snippet }}{% endif %}">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
