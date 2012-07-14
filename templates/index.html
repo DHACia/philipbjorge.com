@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block js %}
+  <script src="/js/jquery.isotope.min.js"></script>
+  <script src="/js/jquery.infinitescroll.min.js"></script>
+{% endblock %}
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="/css/isotope.css">
+  <link rel="stylesheet" type="text/css" href="/css/networks.css">
+{% endblock %}
+{% block content %}
+<div id="social-container" class="variable-sizes clearfix infinite-scrolling">
+<?php require_once('get_stream.php'); ?>
+</div>
+<div id="new-content"></div>
+<script>
+      var $container = $('#social-container');
+    
+      $container.isotope({
+        itemSelector : '.social-item',
+		animationEngine : 'best-available',
+        animationOptions : {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        },
+		getSortData: {
+			time: function( $elem ) {
+				return $elem.find('time').attr('datetime');
+			}
+		},
+		sortBy: 'time',
+		sortAscending: false
+      });
+	  
+	  $("#new-content").load('update_stream.php', function() {
+		$container.isotope('insert', $(this).children('.social-item'));
+		$("time").timeago();
+	  });
+	  
+	  if ($("time").length)
+		$("time").timeago();
+      
+      $container.infinitescroll({
+        navSelector  : '#social-nav',    // selector for the paged navigation 
+        nextSelector : '#social-nav a',  // selector for the NEXT link (to page 2)
+        itemSelector : '.social-item',     // selector for all items you'll retrieve
+        loading: {
+            finishedMsg: 'No more pages to load.',
+            img: 'images/loader.gif'
+          }
+        },
+        // call Isotope as a callback
+        function( newElements ) {
+			var $newElems = $( newElements ).css({ opacity: 0 });
+			$newElems.imagesLoaded(function(){
+				$("time").timeago();
+				$container.isotope('appended', $newElems );
+				$newElems.animate({ opacity: 1 });
+			});
+        }
+      );
+</script>
+{% endblock %}
